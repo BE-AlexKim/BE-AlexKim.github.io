@@ -1,6 +1,9 @@
 #after any changes to the Gemfile, execute bundle update!
 source "https://rubygems.org"
-gemspec
+
+group :jekyll_plugins do
+  gem "github-pages", "~> 232"
+end
 
 # Delete the following lines if not on Windows: 
 # Performance-booster for watching directories on Windows
