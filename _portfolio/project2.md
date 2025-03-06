@@ -1,19 +1,22 @@
 ---
-title: Project Name
-subtitle: Lorem ipsum dolor sit amet consectetur.
-image: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-agency/master/src/assets/img/portfolio/02-full.jpg
-alt: Keep Exploring
+caption: #what displays in the portfolio grid:
+  title: StarRuckus
+  subtitle: 아동의 ADHD 잠재 가능성 진단 강화 애플리케이션 (임상 진행중, GS 인증 완료)
+  thumbnail: https://i.postimg.cc/NjmQtL0m/thumbnail.jpg
+  
+#what displays when the item is clicked:
+title: StarRuckus
+subtitle: 아동의 ADHD 잠재 가능성을 진단하는 진단 게임 및 인지능력을 강화해주는 인지능력 강화 프로그램
+image: assets/img/portfolio/starruckus/thumbnail.jpg
+alt: image alt text
 
-caption:
-  title: Explore
-  subtitle: Graphic Design
-  thumbnail: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-agency/master/src/assets/img/portfolio/02-thumbnail.jpg
 ---
+Use this area to describe your project. **Markdown** supported.
 
-Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+optional info list (delete if not using):
 
-{:.list-inline}
+{:.list-inline} 
+- Date: 
+- Client: 
+- Category: 
 
-- Date: January 2017
-- Client: Explore
-- Category: Graphic Design

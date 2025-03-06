@@ -45,33 +45,28 @@ en: &DEFAULT_EN
 
   timeline:
     title: "TIMELINE"
-    text: "내가 살아온 발자취"
+    text: ""
     section: timeline
     # left is the default
-    #start_align: "left"
+    start_align: "left"
     events:
-      - title: "동남 고등학교 졸업"
-        year: "2009-2011"
-        desc: "포천시 소재지의 인문계 고등학교인 동남고등학교를 졸업하였습니다."
-        image: assets/img/timeline/1.jpg
-        alt:
-      - title: "안동대학교 미술학과 졸업"
-        year: "2012-2017"
-        desc: "안동대학교 미술학과 서양학부를 졸업하였습니다."
-        image: assets/img/timeline/2.jpg
-        alt:
-      - title: "미술 창업"
-        year: "2020.01-2021.01"
-        desc: "미술학과를 졸업한 후, 젊은 청년 작가들의 작품활동을 지원하고 예술 작품을 판매하는 시장 개척을 위해, 미술품 판매 및 렌탈 서비스업 창업을 한 경험이 있습니다."
-        image: assets/img/timeline/3.jpg
-        alt: image alt text
       - title: "(주)이젠 컴퓨터 아카데미 수료"
         year: "2009-2011"
-        desc: "강남 소재지의 이젠 컴퓨터 아카데미를 수료하였습니다. Java와 Spring, Javascript를 주로 공부하였습니다. "
-        image: assets/img/timeline/4.jpg
+        desc: "강남 소재지의 이젠 컴퓨터 아카데미를 수료<br>팀 프로젝트 최우수상 수상"
+        image: assets/img/timeline/1.jpg
         alt: image alt text
+      - title: "(주)더조인"
+        year: "2022.03-2022.09"
+        desc: "모바일 헬스케어 전문 개발업체 더조인 입사<br>(주)FIET 애플리케이선 개발 참여"
+        image: assets/img/timeline/2.jpg
+        alt:
+      - title: "(주)이모티브"
+        year: "2022.11-2024.08"
+        desc: "정신건강 헬스케어 자체 솔루션 개발업체, 아동 ADHD(인지능력장애) 및 ASD(자폐) 등 다양한 <br>멘탈 케어 애플리케이션 제작 <br>2024.01 웹 서비스팀 팀장"
+        image: assets/img/logo/emotiv_logo.png
+        alt:
         # you can enforce the alignment
-        align: right
+        align: left
     end: "Be Part <br> of Our <br> Story!"
 
   clients:
