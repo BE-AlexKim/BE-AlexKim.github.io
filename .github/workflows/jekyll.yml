@@ -45,7 +45,9 @@ jobs:
         uses: actions/configure-pages@v5
         # Install Jakyll Bundle
       - name: Install Jakyll
-        run: gem install jekyll bundler
+        run: |
+          gem install jekyll bundler
+          bundle install
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl ""
