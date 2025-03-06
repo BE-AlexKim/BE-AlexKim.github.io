@@ -11,17 +11,15 @@
 # -----------------
 en: &DEFAULT_EN
   nav:
-    - title: "About Me"
-      section: about
-    - title: "Contact"
-      section: contact
-    - title: "Timeline"
+    - title: "소개말"
+      section: team
+    - title: "연혁"
       section: timeline
-    - title: "Portfolio"
+    - title: "포트폴리오"
       section: portfolio
-    - title: "Services"
-      section: services
-    - title: "Github"
+    - title: "연락처"
+      section: contact
+    - title: "깃허브"
       url: https://github.com/be-alexkim/
 en-US:
   <<: *DEFAULT_EN

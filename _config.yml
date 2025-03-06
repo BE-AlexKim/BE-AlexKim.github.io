@@ -16,7 +16,7 @@ theme: jekyll-agency
 url    : "https://be-alexkim.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
-title      : Portfolio & Blog
+title      : Kim ki hyun Portfolio
 email      : joy585@naver.com #this is also the email contact forms will go to
 description: "Site description"
 author     : Kim Ki Hyun

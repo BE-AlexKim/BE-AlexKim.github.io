@@ -44,89 +44,69 @@ en: &DEFAULT_EN
     closebutton: "Close Project"
 
   timeline:
-    title: "Timeline"
-    text: "Lorem ipsum timeline"
+    title: "TIMELINE"
+    text: "내가 살아온 발자취"
     section: timeline
     # left is the default
     #start_align: "left"
     events:
-      - title: "Our Humble Beginnings"
+      - title: "동남 고등학교 졸업"
         year: "2009-2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        desc: "포천시 소재지의 인문계 고등학교인 동남고등학교를 졸업하였습니다."
         image: assets/img/timeline/1.jpg
         alt:
-      - title: "An Agency is Born"
-        year: "March 2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+      - title: "안동대학교 미술학과 졸업"
+        year: "2012-2017"
+        desc: "안동대학교 미술학과 서양학부를 졸업하였습니다."
         image: assets/img/timeline/2.jpg
         alt:
-      - title: "Jekyll Theme is created"
-        year: "2019"
-        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
+      - title: "미술 창업"
+        year: "2020.01-2021.01"
+        desc: "미술학과를 졸업한 후, 젊은 청년 작가들의 작품활동을 지원하고 예술 작품을 판매하는 시장 개척을 위해, 미술품 판매 및 렌탈 서비스업 창업을 한 경험이 있습니다."
         image: assets/img/timeline/3.jpg
         alt: image alt text
-      - title: "Title"
+      - title: "(주)이젠 컴퓨터 아카데미 수료"
         year: "2009-2011"
-        desc: "Your description here, **Markdown** is fully supported."
+        desc: "강남 소재지의 이젠 컴퓨터 아카데미를 수료하였습니다. Java와 Spring, Javascript를 주로 공부하였습니다. "
         image: assets/img/timeline/4.jpg
-        alt:
+        alt: image alt text
         # you can enforce the alignment
         align: right
     end: "Be Part <br> of Our <br> Story!"
 
   clients:
     section: clients
-    max-height: 100px
+    max-height: 200px
     horizontal-scrolling: "" #"yes/no"
     list:
-      - title: "envato"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/envato.jpg
-      - title: "designmodo"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/designmodo.jpg
-      - title: "themeforest"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/themeforest.jpg
-      - title: "Creative Market"
-        url: https://github.com/raviriley/agency-jekyll-theme
-        logo: assets/img/clients/creative-market.jpg
+#      - title: "envato"
+#        url: https://github.com/raviriley/agency-jekyll-theme
+#        logo: assets/img/clients/envato.jpg
+#      - title: "designmodo"
+#        url: https://github.com/raviriley/agency-jekyll-theme
+#        logo: assets/img/clients/designmodo.jpg
+#      - title: "themeforest"
+#        url: https://github.com/raviriley/agency-jekyll-theme
+#        logo: assets/img/clients/themeforest.jpg
+#      - title: "Creative Market"
+#        url: https://github.com/raviriley/agency-jekyll-theme
+#        logo: assets/img/clients/creative-market.jpg
 
   team:
-    title: "OUR AMAZING TEAM"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
+    title: "ABOUT ME"
+    text: "안녕하세요 주니어 백엔드 개발자 김기현입니다."
+    subtext: <div style="text-align:left;"> <p>2021년부터 여러 스타트업에서 다양한 제품과 팀을 경험하였습니다. 주로 백엔드 개발자의 역할로 일을 했지만, 이모티브에서 팀의 리더 역할과 PM의 역할도 겸하며 여러 문제를 해결하기 위해 필요한 직무들을 수행했습니다.</p><p>The Join에서는 Juvis 다이어트와 합작하여 진행한 프로젝트에 참여하여 주로 Native와 Flutter 개발자와 딥러닝 개발자분들과 함께 합을 맞추며 일했으며, 서비스에 필요한 IT 제품의 서버를 담당하여 개발하고 운영하였고, 짧은 기간에 많은 기술적 성장을 이뤄낼 수 있었습니다. The Join에서 성장한 기술력을 바탕으로 이모티브에서 크고 작은 프로젝트들을 진행하였고, 5개의 제품을 개발하고 런칭하면서 작은 성공과 실패를 경험했습니다.</p><p>문제를 해결하여 비즈니스의 성장에 기여하는 모든 일을 최우선으로 생각합니다. 빠르게 흘러가는 시장에서 빠르게 개발하고 배포하여 사용자들의 피드백을 발 빠르게 수용하는 역량을 쌓고자 노력해왔습니다. 또한 비즈니스의 성공은 혼자가 아닌 다양한 구성원들과 함께 만들어 나아갈 수 있다고 믿기에 적극적으로 커뮤니케이션하면서 협업을 진행해왔습니다.</p><p>2025년에 저는 다음과 같은 노력에 집중하고 있습니다.</p><ul><li> 개발과 관련한 커뮤니티 형성을 위해 OAuth 관련 라이브러리 개발을 진행하며, Google, Apple이 아닌 국내 서비스 전용 OAuth 라이브러리를 개발하여 오픈 소스 로그인 개발연동 시, 더욱 간단하게 사용할 수 있는 방법에 대한 연구를 진행하고 있습니다.</li><br><li>개발의 역량을 더욱 확장하고, 다양한 서비스 운영의 경험을 쌓기 위해 국내 마케팅과 관련된 셀러 전용 백오피스를 제작하고 있습니다.</li><br><li>리더로서의 역량적 향상을 위해 주변의 커뮤니티를 활용해 주기적으로 팀 리드를 맡고 있는 사람들과 만나 관련 서적을 읽으며, 토론하고 각각의 회사의 상황에 맞는 예시를 들어가며 어떻게 하면 좋은 방향으로 가지고 갈 수 있는지에 대해서 논의하는 자리를 갖고 있습니다.</li></ul></div>
     section: team
     people:
-      - name: "Kay Garland"
-        role: "Lead Designer"
-        image: assets/img/team/500x500.jpg
+      - name: "김기현"
+        role: "Backend Engineer"
+        image: assets/img/team/2.png
         social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
+          - url: https://mail.google.com/mail/?view=cm&fs=1&to=rpp0321@gmail.com
+            icon: fab fa-google
           - url: https://facebook.com
             icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-      - name: "Larry Parker"
-        role: "Lead Marketer"
-        image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
-      - name: "Diana Perterson"
-        role: "Lead Developer"
-        image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
+          - url: https://www.linkedin.com/in/kihyun-kim-476651351/
             icon: fab fa-linkedin-in
 
   contact:
@@ -147,16 +127,10 @@ en: &DEFAULT_EN
   footer:
     legal: "Privacy Policy"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
+      - url: https://www.linkedin.com/in/kihyun-kim-476651351/
         icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
+      - url: https://github.com/BE-AlexKim
         icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
