@@ -31,8 +31,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          gem install bundler
-          bundle install --retry 3
+          gem install jekyll bundle
+          bundle install
 
       - name: Setup Pages
         id: pages
