@@ -1,8 +1,6 @@
 ---
 layout: about
 title: About Me
-subtitle: 안녕하세요
-banner: assets/images/profile/2.png
 ---
 
 <h2>Contact</h2>  
