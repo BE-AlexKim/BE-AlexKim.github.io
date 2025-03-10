@@ -36,13 +36,13 @@ The Join에서는 Juvis 다이어트와의 합작 프로젝트에 참여하여 N
    저는 단순한 기술 습득을 넘어, 개발을 통해 비즈니스 가치 창출에 기여하는 것을 목표로 하고 있습니다. 더 나은 제품을 만들고, 더 효율적으로 일하며, 더 효과적으로 협업하는 방법을 지속적으로 탐구하고 성장해 나가겠습니다.
 
 <h2>Project</h2>
-- 2024 이모티브 멘탈 케어 서비스 플랫폼 ZEMIT 초기 서버 개발 및 서비스 기획
-- 2024 이모티브 홈페이지 전면 개편작업 및 서버 개발
-- 2023 EBS 초등온 & 이모티브 인지능력강화 및 진단 솔루션 인터페이스 서버 구축
-- 2023 StarRuckus OTC Beta B2G 서비스용 서버 개발자
+- [2024 이모티브 멘탈 케어 서비스 플랫폼 ZEMIT 초기 서버 개발 및 서비스 기획](https://be-alexkim.github.io/project/2024/08/12/project2.html)
+- [2024 이모티브 홈페이지 전면 개편작업 및 서버 개발](https://be-alexkim.github.io/project/2024/04/01/project3.html)
+- [2023 EBS 초등온 & 이모티브 인지능력강화 및 진단 솔루션 인터페이스 서버 구축](https://be-alexkim.github.io/project/2024/01/03/project4.html)
+- [2023 StarRuckus OTC Beta B2G 서비스용 서버 개발자](https://be-alexkim.github.io/project/2023/06/29/project5.html)
 - 2023 Erion 아동 ASD 생활력 강화 게임 치료제 PM & 서버 개발자 
-- 2023 StarRuckus 아동 ADHD 진단 및 강화 게임 서비스 서버 개발자
-- 2022 FIET AI 개인형 맞춤 헬스 케어 모바일 앱 서버 개발자
+- [2023 StarRuckus 아동 ADHD 진단 및 강화 게임 서비스 서버 개발자](https://be-alexkim.github.io/project/2023/03/06/project6.html)
+- [2022 FIET AI 개인형 맞춤 헬스 케어 모바일 앱 서버 개발자](https://be-alexkim.github.io/project/2022/09/03/project7.html)
 
 <h2>Skill</h2>
 - Language: Kotlin, Java
