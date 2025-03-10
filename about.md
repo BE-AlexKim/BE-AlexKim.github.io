@@ -1,8 +1,9 @@
 ---
 layout: about
-title: About
+title: About Me
+subtitle: 안녕하세요
+banner: assets/images/profile/2.png
 ---
-<img size="150" src="assets/images/profile/1.png"/>
 
 <h2>Contact</h2>  
 - Name: 김기현
@@ -24,9 +25,13 @@ The Join에서는 Juvis 다이어트와의 합작 프로젝트에 참여하여 N
 1. 개발 커뮤니티 기여 및 오픈소스 프로젝트
    OAuth 관련 라이브러리 개발을 진행 중입니다.
    Google, Apple 등 글로벌 서비스뿐만 아니라, 국내 서비스에 특화된 OAuth 라이브러리를 구축하여 로그인 연동을 간소화하는 방안을 연구하고 있습니다.
+
+
 2. 서비스 운영 경험 확장
    국내 마케팅 관련 셀러 전용 백오피스를 제작하며, 실제 서비스 운영 및 유지보수 경험을 쌓고 있습니다.
    확장 가능한 백엔드 아키텍처 설계 및 데이터 처리 최적화를 통해 대규모 트래픽을 효과적으로 처리하는 기술을 익히고 있습니다.
+
+
 3. 리더십 역량 강화
    주기적으로 팀 리드를 맡고 있는 개발자들과 네트워킹하며, 관련 서적을 읽고 토론하는 스터디를 운영하고 있습니다.
    다양한 스타트업 환경에서 적용할 수 있는 효율적인 팀 운영 및 의사결정 방식에 대해 논의하며, 조직과 비즈니스 성장을 촉진하는 리더로 성장하고자 합니다.
@@ -40,6 +45,14 @@ The Join에서는 Juvis 다이어트와의 합작 프로젝트에 참여하여 N
 - 2023 Erion 아동 ASD 생활력 강화 게임 치료제 PM & 서버 개발자 
 - 2023 StarRuckus 아동 ADHD 진단 및 강화 게임 서비스 서버 개발자
 - 2022 FIET AI 개인형 맞춤 헬스 케어 모바일 앱 서버 개발자
+
+<h2>Skill</h2>
+- Language: Kotlin, Java
+- Framework: Springboot, JPA, Spring Security
+- CI/CD: AWS Code Build/Deploy/Pipeline, Jenkins, Github Action
+- Database: MySQL, PostgreSQL, Oracle, Redis
+- OpenSource: QueryDSL, OAuth
+- Tool: Notion, Github, Slack, Creatie, Figma
 
 <h2>Career</h2>
 - 2024.01-2024.09 (주)이모티브 웹 개발팀 팀장
