@@ -37,10 +37,9 @@ subtitle: 안녕하세요
   - [2023 EBS 초등온 & 이모티브 인지능력강화 및 진단 솔루션 인터페이스 서버 구축](https://be-alexkim.github.io/project/2024/01/03/project4.html)
   - 2023 Erion 아동 ASD 생활력 강화 게임 치료제 PM & 서버 개발자  
   - [2023 StarRuckus OTC Beta B2G 서비스용 서버 개발자](https://be-alexkim.github.io/project/2023/06/29/project5.html)
-
+  - [2023 StarRuckus 아동 ADHD 진단 및 강화 게임 서비스 서버 개발자](https://be-alexkim.github.io/project/2023/03/06/project6.html)
   
 - 2022.03-2022.09 (주)더조인 개발2팀 팀원
-  - [2023 StarRuckus 아동 ADHD 진단 및 강화 게임 서비스 서버 개발자](https://be-alexkim.github.io/project/2023/03/06/project6.html)
   - [2022 FIET AI 개인형 맞춤 헬스 케어 모바일 앱 서버 개발자](https://be-alexkim.github.io/project/2022/09/03/project7.html)
 
 <h2>Skill</h2>
