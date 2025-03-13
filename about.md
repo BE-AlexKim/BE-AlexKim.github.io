@@ -4,7 +4,7 @@ title: About Me
 subtitle: 안녕하세요
 ---
 <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-  <img src="assets/images/profile/1.png" style="width: 300px; height: auto;"/>
+  <img src="assets/images/profile/1.png" style="width: 200px; height: auto;"/>
   <div style="align-items: flex-end;">
     <h2>Contact</h2>  
     <div><strong>Name:</strong> 김기현</div>
