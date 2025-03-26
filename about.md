@@ -26,7 +26,7 @@ Kotlin과 Spring Boot를 주력으로 사용하며, 아키텍처 설계, 성능 
 <h2>Career</h2>
 - 2024.01-2024.09 (주)이모티브 개발팀 팀장
   - [2024 이모티브 멘탈 케어 서비스 플랫폼 ZEMIT](https://be-alexkim.github.io/project/2024/08/12/project.html)
-  - [2024 이모티브 홈페이지 전면 개편 및 서버 개발](https://be-alexkim.github.io/project/2024/04/01/project.html)  
+  - [2024 이모티브 홈페이지 전면 개편 및 서버 개발](https://be-alexkim.github.io/project/2024/04/01/project.html)   
 - 2022.11-2024.01 (주)이모티브 개발팀 팀원
   - [2023 EBS 초등온 인터페이스 서버 구축](https://be-alexkim.github.io/project/2024/01/03/project.html)
   - [2023 StarRuckus B2G 서버 개발자](https://be-alexkim.github.io/project/2023/06/29/project.html)
