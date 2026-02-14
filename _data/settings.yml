@@ -1,0 +1,39 @@
+# Site Settings Data
+
+# Gallery Settings
+gallery:
+  opening_hours:
+    - day: Tuesday - Saturday
+      hours: 10am - 6pm
+    - day: Sunday
+      hours: 11am - 5pm
+    - day: Monday
+      hours: Closed
+  last_admission: 30 minutes before closing
+
+# Contact Information
+contact:
+  address:
+    street: 123 Art Street
+    city: Melbourne
+    state: VIC
+    postcode: 3000
+    country: Australia
+  phone: +61 3 1234 5678
+  email: info@artisancollective.com.au
+
+# Social Media
+social:
+  instagram:
+    username: artisan_collective
+    url: https://instagram.com/artisan_collective
+  facebook:
+    username: artisancollective
+    url: https://facebook.com/artisancollective
+
+# Features
+features:
+  newsletter: true
+  online_booking: false
+  virtual_tours: false
+  art_consultancy: true

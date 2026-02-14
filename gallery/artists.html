@@ -1,0 +1,36 @@
+---
+layout: gallery-page
+title: Artists
+subtitle: Meet the talented creators behind our collection
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h1 class="gallery-section-title">{{ t.artists.title }}</h1>
+      <p class="gallery-section-description">
+        {{ t.artists.subtitle }}
+      </p>
+    </div>
+
+    <div class="artist-grid">
+      {% for artist in site.artists %}
+      <a href="{{ artist.url | relative_url }}" class="artist-card">
+        <div class="artist-card-image">
+          <img src="{{ artist.featured_image | default: artist.image | relative_url }}" alt="{{ artist.name }}"
+            loading="lazy">
+        </div>
+        <div class="artist-info">
+          <h3 class="artist-name">{{ artist.name }}</h3>
+          {% if artist.nationality %}
+          <p class="artist-nationality">{{ artist.nationality }}</p>
+          {% endif %}
+          <p class="artist-specialty">{{ artist.medium }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

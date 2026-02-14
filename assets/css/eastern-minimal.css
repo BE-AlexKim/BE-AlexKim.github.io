@@ -1,0 +1,789 @@
+/* ============================================
+   LIMINAL GALLERY - EASTERN MINIMALIST DESIGN SYSTEM
+   Modern & Classic | 여백의 미 (Beauty of Negative Space)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   DESIGN TOKENS - EASTERN AESTHETIC
+   ============================================ */
+
+:root {
+    /* COLOR PALETTE - Natural & Subtle */
+
+    /* Primary Colors - 먹과 한지 (Ink & Rice Paper) */
+    --ink-black: #1a1a1a;
+    --rice-paper: #faf8f3;
+    --charcoal: #4a4a4a;
+    --stone-grey: #8b8b8b;
+
+    /* Accent Colors - Traditional */
+    --celadon: #a8c5b5;
+    /* 청자색 */
+    --celadon-dark: #8ba899;
+    --bronze: #8b7355;
+    /* 청동색 */
+    --bronze-light: #a89078;
+    --vermillion: #c44536;
+    /* 주홍 (minimal use) */
+
+    /* Neutral Tones */
+    --warm-white: #f5f3ed;
+    --cool-grey: #e8e6e0;
+    --soft-beige: #ede9e0;
+    --mist-grey: #f0eeea;
+
+    /* Semantic Colors */
+    --text-primary: var(--ink-black);
+    --text-secondary: var(--charcoal);
+    --text-tertiary: var(--stone-grey);
+    --background-primary: var(--rice-paper);
+    --background-secondary: var(--warm-white);
+    --border-subtle: var(--cool-grey);
+    --accent-primary: var(--celadon);
+    --accent-secondary: var(--bronze);
+
+    /* TYPOGRAPHY SYSTEM */
+
+    /* Font Families */
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-serif-kr: 'Noto Serif KR', serif;
+    --font-sans-en: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans-kr: 'Noto Sans KR', sans-serif;
+
+    /* Font Sizes - Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    /* 12-14px */
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    /* 14-16px */
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    /* 16-18px */
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+    /* 18-22px */
+    --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+    /* 20-26px */
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    /* 24-32px */
+    --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.625rem);
+    /* 30-42px */
+    --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3.25rem);
+    /* 36-52px */
+    --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+    /* 48-72px */
+    --text-6xl: clamp(3.75rem, 3rem + 3.75vw, 6rem);
+    /* 60-96px */
+
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Line Heights - Generous for Readability */
+    --leading-tight: 1.2;
+    --leading-snug: 1.4;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.8;
+    --leading-loose: 2.0;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+
+    /* SPACING SYSTEM - Generous (여백의 미) */
+
+    /* Base Unit: 8px */
+    --space-1: 0.5rem;
+    /* 8px */
+    --space-2: 1rem;
+    /* 16px */
+    --space-3: 1.5rem;
+    /* 24px */
+    --space-4: 2rem;
+    /* 32px */
+    --space-5: 2.5rem;
+    /* 40px */
+    --space-6: 3rem;
+    /* 48px */
+    --space-8: 4rem;
+    /* 64px */
+    --space-10: 5rem;
+    /* 80px */
+    --space-12: 6rem;
+    /* 96px */
+    --space-16: 8rem;
+    /* 128px */
+    --space-20: 10rem;
+    /* 160px */
+    --space-24: 12rem;
+    /* 192px */
+
+    /* Container Widths */
+    --container-narrow: 800px;
+    --container-medium: 1100px;
+    --container-wide: 1400px;
+    --container-header: 1600px;
+    --container-footer: 1600px;
+    --container-padding: 3.75rem;
+    /* 60px */
+
+    /* BORDER & RADIUS */
+
+    --border-width: 1px;
+    --border-subtle: 1px solid var(--border-subtle);
+
+    --radius-none: 0;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+
+    /* SHADOWS - Subtle & Natural */
+
+    --shadow-xs: 0 1px 2px rgba(26, 26, 26, 0.04);
+    --shadow-sm: 0 2px 4px rgba(26, 26, 26, 0.06);
+    --shadow-md: 0 4px 12px rgba(26, 26, 26, 0.08);
+    --shadow-lg: 0 8px 24px rgba(26, 26, 26, 0.10);
+    --shadow-xl: 0 12px 40px rgba(26, 26, 26, 0.12);
+
+    /* TRANSITIONS - Smooth & Elegant */
+
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-elegant: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --duration-fast: 200ms;
+    --duration-base: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 700ms;
+
+    /* Z-INDEX SCALE */
+
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-sans-en);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+    overflow-x: hidden;
+}
+
+/* Korean Language Support */
+html[lang="ko"] body {
+    font-family: var(--font-sans-kr);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif-en);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+html[lang="ko"] h1,
+html[lang="ko"] h2,
+html[lang="ko"] h3,
+html[lang="ko"] h4,
+html[lang="ko"] h5,
+html[lang="ko"] h6 {
+    font-family: var(--font-serif-kr);
+    letter-spacing: var(--tracking-normal);
+}
+
+h1 {
+    font-size: var(--text-6xl);
+    margin-bottom: var(--space-8);
+}
+
+h2 {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-6);
+}
+
+h3 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-5);
+}
+
+h4 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+}
+
+h5 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+}
+
+h6 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+}
+
+p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-loose);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--duration-base) var(--ease-elegant);
+}
+
+a:hover {
+    color: var(--accent-primary);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-4);
+    background-color: var(--ink-black);
+    color: var(--rice-paper);
+    padding: var(--space-2) var(--space-4);
+    z-index: var(--z-fixed);
+    transition: top var(--duration-base) var(--ease-elegant);
+    text-transform: uppercase;
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-widest);
+}
+
+.skip-link:focus {
+    top: var(--space-2);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.container,
+.container-narrow,
+.container-wide {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    width: 100%;
+}
+
+.container {
+    max-width: var(--container-medium);
+}
+
+.container-narrow {
+    max-width: var(--container-narrow);
+}
+
+.container-wide {
+    max-width: var(--container-wide);
+}
+
+/* Section Spacing - Generous Vertical Rhythm */
+.section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+}
+
+.section-lg {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+}
+
+.section-xl {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+}
+
+/* ============================================
+   NAVIGATION - Minimal & Elegant
+   ============================================ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: transparent;
+    transition: all var(--duration-base) var(--ease-elegant);
+    padding: var(--space-4) 0;
+}
+
+.site-header.scrolled {
+    background-color: rgba(250, 248, 243, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+    border-bottom: var(--border-subtle);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    min-height: 60px;
+}
+
+.header-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 10;
+}
+
+.main-nav {
+    flex: 0 0 auto;
+    z-index: 5;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.site-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    text-decoration: none;
+    transition: opacity var(--duration-base) var(--ease-elegant);
+}
+
+.site-logo:hover {
+    opacity: 0.7;
+}
+
+.logo-line-1 {
+    font-family: var(--font-serif-en);
+    font-size: 1.5rem;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.2em;
+    color: var(--ink-black);
+    margin-bottom: 2px;
+}
+
+.logo-line-2 {
+    font-family: var(--font-sans-en);
+    font-size: 0.7rem;
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.5em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    padding-left: 2px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.nav-link {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    transition: color var(--duration-base) var(--ease-elegant);
+    position: relative;
+    padding-bottom: var(--space-1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-primary);
+    transition: width var(--duration-base) var(--ease-elegant);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ============================================
+   BUTTONS - Minimal & Elegant
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    font-family: inherit;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    text-align: center;
+    border: var(--border-subtle);
+    background-color: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--duration-base) var(--ease-elegant);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--ink-black);
+    border-color: var(--ink-black);
+    color: var(--rice-paper);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--ink-black);
+    border-color: var(--ink-black);
+    color: var(--rice-paper);
+}
+
+.btn-primary:hover {
+    background-color: var(--charcoal);
+    border-color: var(--charcoal);
+}
+
+.btn-accent {
+    background-color: var(--celadon);
+    border-color: var(--celadon);
+    color: var(--ink-black);
+}
+
+.btn-accent:hover {
+    background-color: var(--celadon-dark);
+    border-color: var(--celadon-dark);
+}
+
+/* ============================================
+   CARDS - Minimal & Elegant
+   ============================================ */
+
+.card {
+    background-color: var(--background-primary);
+    transition: all var(--duration-base) var(--ease-elegant);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--mist-grey);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-elegant);
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: var(--space-5);
+}
+
+.card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-2);
+}
+
+.card-description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    padding: var(--space-1) var(--space-2);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: var(--weight-medium);
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: color var(--duration-base) var(--ease-elegant);
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+    color: var(--text-primary);
+}
+
+.language-switcher .separator {
+    color: var(--border-subtle);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    :root {
+        --container-padding: 2.5rem;
+        /* 40px */
+        --space-16: 6rem;
+        /* 96px */
+        --space-20: 8rem;
+        /* 128px */
+        --space-24: 10rem;
+        /* 160px */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1.5rem;
+        /* 24px */
+        --space-16: 4rem;
+        /* 64px */
+        --space-20: 5rem;
+        /* 80px */
+        --space-24: 6rem;
+        /* 96px */
+    }
+
+    .nav-menu {
+        gap: var(--space-4);
+    }
+
+    .main-nav {
+        gap: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 1rem;
+        /* 16px */
+        --space-16: 3rem;
+        /* 48px */
+        --space-20: 4rem;
+        /* 64px */
+        --space-24: 5rem;
+        /* 80px */
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Text Alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-tertiary {
+    color: var(--text-tertiary);
+}
+
+.text-accent {
+    color: var(--accent-primary);
+}
+
+/* Background Colors */
+.bg-primary {
+    background-color: var(--background-primary);
+}
+
+.bg-secondary {
+    background-color: var(--background-secondary);
+}
+
+.bg-mist {
+    background-color: var(--mist-grey);
+}
+
+/* Spacing Utilities */
+.mt-auto {
+    margin-top: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Display */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Flex Utilities */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Aspect Ratios */
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-portrait {
+    aspect-ratio: 3 / 4;
+}
+
+.aspect-landscape {
+    aspect-ratio: 16 / 10;
+}
+
+.aspect-wide {
+    aspect-ratio: 21 / 9;
+}
+
+/* Overflow */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Transitions */
+.transition-all {
+    transition: all var(--duration-base) var(--ease-elegant);
+}

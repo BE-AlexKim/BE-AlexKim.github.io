@@ -1,0 +1,293 @@
+/* ============================================
+   GATEWAY PAGE - Liminal Gallery & Ember & Hearth
+   Split-screen selection page
+   ============================================ */
+
+:root {
+  /* Gallery Colors */
+  --gallery-white: #FAFAF8;
+  --threshold-grey: #4A4A48;
+  --liminal-black: #1A1A1A;
+  --contemplation-blue: #E8EFF4;
+
+  /* Cafe Colors */
+  --hearth-cream: #F9F6F1;
+  --ember-terracotta: #C97456;
+  --roasted-coffee: #3D2B1F;
+  --morning-gold: #E6B85D;
+  --soft-linen: #E8E3DA;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body.gateway-page {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Gateway Container */
+.gateway-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+/* Gateway Halves */
+.gateway-half {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gallery Side */
+.gallery-side {
+  background-color: var(--gallery-white);
+}
+
+.gallery-side .gateway-content {
+  font-family: 'Cormorant Garamond', serif;
+  color: #FFFFFF; /* White text on semi-transparent overlay */
+}
+
+.gallery-side .gateway-cta {
+  border-color: #FFFFFF; /* White text on semi-transparent overlay */
+  color: #FFFFFF; /* White text on semi-transparent overlay */
+}
+
+.gallery-side:hover .gateway-cta {
+  background-color: #FFFFFF; /* White text on semi-transparent overlay */
+  color: var(--gallery-white);
+}
+
+/* Cafe Side */
+.cafe-side {
+  background-color: var(--hearth-cream);
+}
+
+.cafe-side .gateway-content {
+  font-family: 'Petrona', serif;
+  color: var(--roasted-coffee);
+}
+
+.cafe-side .gateway-cta {
+  border-color: var(--ember-terracotta);
+  color: var(--ember-terracotta);
+}
+
+.cafe-side:hover .gateway-cta {
+  background-color: var(--ember-terracotta);
+  color: var(--hearth-cream);
+}
+
+/* Background Image */
+.gateway-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.cafe-bg {
+  background: linear-gradient(135deg, var(--hearth-cream) 0%, var(--soft-linen) 100%);
+}
+
+/* Overlay */
+.gateway-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.gateway-half:hover .gateway-overlay {
+  opacity: 0;
+}
+
+/* Link */
+.gateway-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* Content */
+.gateway-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px;
+  max-width: 90%;
+}
+
+.gateway-half:hover .gateway-content {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.gateway-brand-name {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.gateway-tagline {
+  font-size: clamp(16px, 2vw, 20px);
+  font-style: italic;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.gateway-cta {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 2px solid currentColor;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Footer */
+.gateway-footer {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--soft-linen);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--roasted-coffee);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-text,
+.footer-contact {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.footer-text {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.footer-contact {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gateway-container {
+    flex-direction: column;
+  }
+
+  .gateway-half {
+    min-height: 50vh;
+  }
+
+  .gateway-brand-name {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .gateway-tagline {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .gateway-cta {
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+
+  .gateway-footer {
+    height: 100px;
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .footer-text,
+  .footer-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gateway-half {
+    min-height: 40vh;
+  }
+
+  .gateway-brand-name {
+    font-size: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .gateway-tagline {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .gateway-cta {
+    padding: 10px 24px;
+    font-size: 11px;
+  }
+}
+
+/* Hover Effects Enhancement */
+@media (hover: hover) {
+  .gateway-half:hover {
+    flex: 1.1;
+  }
+
+  .gateway-half:not(:hover) {
+    flex: 0.9;
+  }
+}

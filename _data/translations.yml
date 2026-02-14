@@ -1,0 +1,237 @@
+# English Translations
+en:
+  site:
+    title: "44BYION STUDIO"
+    tagline: "Curating Space, Crafting Experience"
+    description: "44BYION STUDIO - A sanctuary for contemporary art and artisanal coffee in Sydney."
+    all: "ALL"
+    
+  nav:
+    home: "Home"
+    gallery: "Gallery"
+    cafe: "Café"
+    exhibitions: "Exhibitions"
+    artists: "Artists"
+    collection: "Collection"
+    about: "About"
+    visit: "Visit"
+    contact: "Contact"
+    
+  language:
+    label: "Language"
+    english: "EN"
+    korean: "KO"
+    
+  common:
+    all: "All"
+    view_all: "View All"
+    learn_more: "Learn More"
+    read_more: "Read More"
+    back: "Back"
+    next: "Next"
+    previous: "Previous"
+    close: "Close"
+    
+  gallery:
+    title: "Gallery"
+    subtitle: "Contemporary Art Space"
+    current_exhibitions: "Current Exhibitions"
+    upcoming_exhibitions: "Upcoming Exhibitions"
+    past_exhibitions: "Past Exhibitions"
+    featured_artists: "Featured Artists"
+    from_collection: "From the Collection"
+    our_space: "Our Gallery Space"
+    plan_visit: "Plan Your Visit"
+    
+  artists:
+    title: "Artists"
+    subtitle: "Meet the talented creators behind our collection"
+    view_works: "View Works"
+    biography: "Biography"
+    artistic_philosophy: "Artistic Philosophy"
+    exhibition_history: "Exhibition History"
+    
+  collection:
+    title: "Collection"
+    subtitle: "Explore our curated collection of contemporary artworks"
+    all_works: "All Works"
+    available: "Available"
+    sold: "Sold"
+    artworks: "Artworks"
+    filter_by: "Filter by"
+    
+  exhibitions:
+    title: "Exhibitions"
+    subtitle: "Curated collections and thematic showcases"
+    current: "Current"
+    upcoming: "Upcoming"
+    past: "Past"
+    curator: "Curator"
+    dates: "Dates"
+    
+  artwork:
+    title: "Title"
+    artist: "Artist"
+    year: "Year"
+    medium: "Medium"
+    dimensions: "Dimensions"
+    price: "Price"
+    status: "Status"
+    exhibition: "Exhibition"
+    description: "Description"
+    
+  about:
+    title: "About"
+    our_story: "Our Story"
+    mission: "Mission"
+    philosophy: "Curatorial Philosophy"
+    story_title: "Curating Space, Crafting Experience"
+    story_desc: "44BYION STUDIO exists at the intersection of tradition and innovation, East and West, contemplation and transformation."
+    
+  visit:
+    title: "Visit"
+    hours: "Hours"
+    location: "Location"
+    directions: "Directions"
+    parking: "Parking"
+    accessibility: "Accessibility"
+    plan_visit: "Plan Your Visit"
+    entry_free: "Entry is Free"
+    free_desc: "Liminal Gallery is committed to making contemporary art accessible to all visitors."
+    
+  contact:
+    title: "Contact"
+    email: "Email"
+    phone: "Phone"
+    address: "Address"
+    social: "Social Media"
+    insta: "Instagram"
+    contact_email: "Email"
+    
+  cafe:
+    title: "Ember & Hearth"
+    tagline: "Come for the coffee, stay for the warmth"
+    menu: "Menu"
+    coffee: "Coffee"
+    brunch: "Brunch"
+    pastries: "Pastries"
+    reserve: "Reserve a Table"
+
+# Korean Translations
+ko:
+  site:
+    title: "44BYION STUDIO"
+    tagline: "공간을 큐레이팅하고, 경험을 빚어냅니다"
+    description: "시드니의 현대 미술 갤러리와 아티즌 카페, 44BYION STUDIO"
+    all: "전체"
+    
+  nav:
+    home: "홈"
+    gallery: "갤러리"
+    cafe: "카페"
+    exhibitions: "전시"
+    artists: "작가"
+    collection: "컬렉션"
+    about: "소개"
+    visit: "방문"
+    contact: "연락"
+    
+  language:
+    label: "언어"
+    english: "EN"
+    korean: "KO"
+    
+  common:
+    all: "전체"
+    view_all: "전체 보기"
+    learn_more: "더 알아보기"
+    read_more: "더 읽기"
+    back: "뒤로"
+    next: "다음"
+    previous: "이전"
+    close: "닫기"
+    
+  gallery:
+    title: "갤러리"
+    subtitle: "현대 미술 공간"
+    current_exhibitions: "현재 전시"
+    upcoming_exhibitions: "예정 전시"
+    past_exhibitions: "지난 전시"
+    featured_artists: "주요 작가"
+    from_collection: "컬렉션에서"
+    our_space: "갤러리 공간"
+    plan_visit: "방문 계획하기"
+    
+  artists:
+    title: "작가"
+    subtitle: "우리 컬렉션을 만드는 재능 있는 창작자들을 만나보세요"
+    view_works: "작품 보기"
+    biography: "약력"
+    artistic_philosophy: "작가 철학"
+    exhibition_history: "전시 이력"
+    
+  collection:
+    title: "컬렉션"
+    subtitle: "엄선된 현대 미술 작품을 탐색하세요"
+    all_works: "전체 작품"
+    available: "구매 가능"
+    sold: "판매 완료"
+    artworks: "작품"
+    filter_by: "필터"
+    
+  exhibitions:
+    title: "전시"
+    subtitle: "큐레이션된 컬렉션과 주제별 전시"
+    current: "현재"
+    upcoming: "예정"
+    past: "지난"
+    curator: "큐레이터"
+    dates: "기간"
+    
+  artwork:
+    title: "제목"
+    artist: "작가"
+    year: "연도"
+    medium: "매체"
+    dimensions: "크기"
+    price: "가격"
+    status: "상태"
+    exhibition: "전시"
+    description: "설명"
+    
+  about:
+    title: "소개"
+    our_story: "우리의 이야기"
+    mission: "미션"
+    philosophy: "큐레이토리얼 철학"
+    story_title: "공간을 큐레이팅하고, 경험을 빚어냅니다"
+    story_desc: "44BYION STUDIO는 전통과 혁신, 동양과 서양, 사유와 변형이 교차하는 지점에 존재합니다."
+    
+  visit:
+    title: "방문"
+    hours: "운영 시간"
+    location: "위치"
+    directions: "찾아오시는 길"
+    parking: "주차"
+    accessibility: "접근성"
+    plan_visit: "방문 계획하기"
+    entry_free: "무료 입장"
+    free_desc: "리미널 갤러리는 모든 방문객이 현대 미술을 쉽게 접할 수 있도록 노력하고 있습니다."
+    
+  contact:
+    title: "연락"
+    email: "이메일"
+    phone: "전화"
+    address: "주소"
+    social: "소셜 미디어"
+    insta: "인스타그램"
+    contact_email: "이메일"
+    
+  cafe:
+    title: "엠버 앤 하스"
+    tagline: "커피를 위해 오고, 따뜻함을 위해 머무세요"
+    menu: "메뉴"
+    coffee: "커피"
+    brunch: "브런치"
+    pastries: "페이스트리"
+    reserve: "테이블 예약"

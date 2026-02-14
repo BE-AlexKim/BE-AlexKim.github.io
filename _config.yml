@@ -1,0 +1,106 @@
+# Jekyll Gallery & Cafe Website Configuration
+# 44BYION STUDIO
+
+# Site Settings
+title: "44BYION STUDIO"
+description: "Contemporary art gallery and artisanal cafe in Sydney"
+baseurl: ""
+url: "https://be-alexkim.github.io"
+lang: en
+timezone: Australia/Sydney
+
+# Multilingual Support
+languages: ["en", "ko"]
+default_lang: "en"
+
+# Author/Brand
+author:
+  name: "44BYION STUDIO"
+  email: "hello@44byion.com"
+
+# Social Media
+social:
+  gallery_instagram: "liminalgallery"
+  cafe_instagram: "emberandhearth"
+
+# Build Settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections Configuration
+collections:
+  artists:
+    output: true
+    permalink: /gallery/artists/:title/
+  exhibitions:
+    output: true
+    permalink: /gallery/exhibitions/:title/
+  artworks:
+    output: true
+    permalink: /gallery/collection/:title/
+  menu_items:
+    output: false
+
+# Collection Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "artists"
+    values:
+      layout: "artist"
+      brand: "gallery"
+  - scope:
+      path: ""
+      type: "exhibitions"
+    values:
+      layout: "exhibition"
+      brand: "gallery"
+  - scope:
+      path: ""
+      type: "artworks"
+    values:
+      layout: "artwork"
+      brand: "gallery"
+  - scope:
+      path: "gallery"
+    values:
+      layout: "gallery-page"
+      brand: "gallery"
+  - scope:
+      path: "cafe"
+    values:
+      layout: "cafe-page"
+      brand: "cafe"
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .claude/
+  - README.md
+  - LICENSE
+
+# Sass Configuration
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# SEO Settings
+logo: /assets/images/shared/logo.png
+social:
+  name: 44BYION STUDIO
+  links:
+    - https://instagram.com/liminalgallery
+    - https://instagram.com/emberandhearth

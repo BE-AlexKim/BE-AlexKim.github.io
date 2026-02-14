@@ -1,0 +1,1494 @@
+/*
+ * Artisan Collective Gallery & Cafe Website
+ * Modern International Gallery Aesthetic
+ */
+
+/* ============================================
+   CSS VARIABLES & DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Colors - Minimal & Sophisticated Palette */
+  --color-primary: #1a1a1a;
+  --color-secondary: #6b6b6b;
+  --color-accent: #d4a574;
+  --color-background: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-border: #e0e0e0;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-text-light: #9a9a9a;
+  --color-success: #4a7c4e;
+  --color-error: #c44536;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+  --font-size-5xl: 3rem;
+  /* 48px */
+  --font-size-6xl: 3.75rem;
+  /* 60px */
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+  --space-24: 6rem;
+  /* 96px */
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --container-padding: var(--space-4);
+
+  /* Effects */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.page-content {
+  min-height: calc(100vh - 400px);
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+.site-header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-4) 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-branding .site-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: transform var(--transition-base);
+}
+
+.main-navigation {
+  display: flex;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  transition: color var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+  color: var(--color-accent);
+}
+
+.nav-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  list-style: none;
+  min-width: 200px;
+  padding: var(--space-2) 0;
+}
+
+.nav-item:hover .nav-submenu {
+  display: block;
+}
+
+.nav-sublink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-24);
+  padding: var(--space-16) 0 var(--space-8);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-heading {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+}
+
+.footer-description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.footer-menu,
+.contact-info,
+.hours-list {
+  list-style: none;
+}
+
+.footer-menu li,
+.contact-info li,
+.hours-list li {
+  margin-bottom: var(--space-2);
+}
+
+.footer-menu a,
+.contact-info a {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-base);
+}
+
+.footer-menu a:hover,
+.contact-info a:hover {
+  color: var(--color-accent);
+}
+
+.hours-list li {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.footer-bottom {
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.copyright,
+.credits {
+  color: var(--color-text-light);
+  font-size: var(--font-size-xs);
+  margin: 0;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   LANDING PAGE
+   ============================================ */
+.hero-section {
+  padding: var(--space-24) 0;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-title {
+  font-size: var(--font-size-6xl);
+  margin-bottom: var(--space-4);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-sans);
+}
+
+.hero-tagline {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.selection-section {
+  padding: var(--space-20) 0;
+}
+
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-12);
+}
+
+.selection-card {
+  background-color: var(--color-surface);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.selection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.selection-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.selection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.selection-card:hover .selection-image img {
+  transform: scale(1.05);
+}
+
+.selection-content {
+  padding: var(--space-8);
+}
+
+.selection-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.selection-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.selection-cta {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  transition: color var(--transition-base);
+}
+
+.selection-card:hover .selection-cta {
+  color: var(--color-accent);
+}
+
+.coming-soon-badge {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 2px;
+}
+
+.highlights-section {
+  padding: var(--space-20) 0;
+  background-color: var(--color-surface);
+}
+
+.section-heading {
+  text-align: center;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-12);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.highlight-card {
+  background-color: var(--color-background);
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+}
+
+.highlight-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.highlight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-content {
+  padding: var(--space-6);
+}
+
+.highlight-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2);
+}
+
+.highlight-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
+}
+
+.highlight-dates,
+.highlight-artist {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ============================================
+   GALLERY SECTIONS
+   ============================================ */
+.gallery-header,
+.page-header {
+  padding: var(--space-16) 0 var(--space-12);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gallery-title,
+.page-title {
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.gallery-subtitle,
+.page-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.gallery-content,
+.page-content-wrapper {
+  padding: var(--space-16) 0;
+}
+
+.gallery-intro,
+.artists-intro,
+.exhibitions-intro,
+.artworks-intro {
+  max-width: 800px;
+  margin: 0 auto var(--space-12);
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+.gallery-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.gallery-section-card {
+  background-color: var(--color-surface);
+  padding: var(--space-10);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.gallery-section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.section-icon {
+  margin-bottom: var(--space-6);
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.section-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.section-count {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   ARTIST CARDS & DETAILS
+   ============================================ */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-10);
+}
+
+.artist-card {
+  text-align: center;
+  transition: transform var(--transition-base);
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+}
+
+.artist-card-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  background-color: var(--color-border);
+}
+
+.artist-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.artist-card:hover .artist-card-image img {
+  transform: scale(1.05);
+}
+
+.artist-name {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
+}
+
+.artist-nationality,
+.artist-specialty {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.artist-header {
+  padding: var(--space-16) 0 var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.artist-header-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.artist-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-info .artist-name {
+  font-size: var(--font-size-4xl);
+}
+
+.artist-birth-year,
+.artist-website {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.artist-website {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.artist-content {
+  padding: var(--space-16) 0;
+}
+
+.artist-biography {
+  max-width: 800px;
+  margin-bottom: var(--space-16);
+}
+
+.artist-biography h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-6);
+}
+
+.artist-artworks h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   EXHIBITION CARDS & DETAILS
+   ============================================ */
+.exhibition-category {
+  margin-bottom: var(--space-16);
+}
+
+.category-heading {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-8);
+}
+
+.exhibition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-10);
+}
+
+.exhibition-card {
+  background-color: var(--color-surface);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.exhibition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.exhibition-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.exhibition-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.exhibition-card:hover .exhibition-image img {
+  transform: scale(1.05);
+}
+
+.exhibition-info {
+  padding: var(--space-6);
+  position: relative;
+}
+
+.exhibition-status {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-1) var(--space-3);
+  margin-bottom: var(--space-3);
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.status-current {
+  background-color: var(--color-success);
+  color: var(--color-background);
+}
+
+.status-upcoming {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.status-past {
+  background-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.exhibition-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.exhibition-curator,
+.exhibition-dates {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.exhibition-header {
+  padding: var(--space-16) 0 var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.exhibition-featured-image {
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+  background-color: var(--color-border);
+}
+
+.exhibition-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exhibition-header-info {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.exhibition-header-info .exhibition-title {
+  font-size: var(--font-size-5xl);
+}
+
+.exhibition-content {
+  padding: var(--space-16) 0;
+}
+
+.exhibition-description {
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
+}
+
+.exhibition-description h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-6);
+}
+
+.exhibition-artists,
+.exhibition-artworks {
+  margin-bottom: var(--space-16);
+}
+
+.exhibition-artists h2,
+.exhibition-artworks h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-8);
+}
+
+.artist-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-8);
+}
+
+/* ============================================
+   ARTWORK CARDS & DETAILS
+   ============================================ */
+.artworks-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.filter-btn {
+  background: none;
+  border: 2px solid var(--color-border);
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-10);
+}
+
+.artwork-card {
+  transition: transform var(--transition-base);
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+}
+
+.artwork-image {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  background-color: var(--color-border);
+  position: relative;
+}
+
+.artwork-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.artwork-card:hover .artwork-image img {
+  transform: scale(1.03);
+}
+
+.artwork-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.badge-sold {
+  background-color: var(--color-error);
+  color: var(--color-background);
+}
+
+.artwork-info .artwork-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-1);
+}
+
+.artwork-artist,
+.artwork-year,
+.artwork-medium {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.artwork-detail-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-12);
+  padding: var(--space-16) 0;
+}
+
+.artwork-image-wrapper {
+  background-color: var(--color-surface);
+  padding: var(--space-8);
+}
+
+.artwork-image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.artwork-header .artwork-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-3);
+}
+
+.artwork-header .artwork-artist {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-6);
+}
+
+.artwork-header .artwork-artist a {
+  color: var(--color-accent);
+}
+
+.artwork-meta {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.artwork-meta p {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.artwork-price {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: var(--space-6) 0;
+}
+
+.artwork-description {
+  margin-bottom: var(--space-8);
+  line-height: 1.8;
+}
+
+.artwork-exhibition {
+  background-color: var(--color-surface);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.artwork-exhibition h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+.exhibition-link {
+  display: block;
+  color: var(--color-text-primary);
+}
+
+.artwork-actions {
+  margin-top: var(--space-8);
+}
+
+/* ============================================
+   GALLERY SPACE SHOWCASE
+   ============================================ */
+.space-card {
+  background-color: var(--color-surface);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.space-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.space-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-border);
+  position: relative;
+}
+
+.space-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.space-card:hover .space-card-image img {
+  transform: scale(1.05);
+}
+
+.space-card-info {
+  padding: var(--space-6);
+}
+
+.space-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.space-card-specs {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+  font-weight: 500;
+}
+
+.space-card-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Detail Image Cards */
+.detail-image-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-border);
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.detail-image-card:hover {
+  transform: translateY(-2px);
+}
+
+.detail-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.detail-image-card:hover img {
+  transform: scale(1.08);
+}
+
+.detail-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: var(--space-4);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.detail-image-card:hover .detail-overlay {
+  opacity: 1;
+}
+
+.detail-label {
+  color: var(--color-background);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Gallery Features */
+.feature-card {
+  background-color: var(--color-surface);
+  padding: var(--space-6);
+}
+
+.feature-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.feature-list {
+  list-style: none;
+}
+
+.feature-list li {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-2);
+  position: relative;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.feature-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Gallery Section Styles */
+.gallery-section {
+  padding: var(--space-16) 0;
+}
+
+.gallery-section-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-section-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.gallery-section-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.gallery-btn-cta {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-base);
+  border: 2px solid var(--color-primary);
+}
+
+.gallery-btn-cta:hover {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+/* Collection Filters */
+.collection-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.collection-count {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.collection-count span {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-16);
+  padding: var(--space-16) 0;
+}
+
+.contact-info-block {
+  margin-bottom: var(--space-8);
+}
+
+.contact-info-block h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+}
+
+.contact-info-block p,
+.contact-info-block li {
+  color: var(--color-text-secondary);
+}
+
+.contact-info-block .note {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-top: var(--space-2);
+}
+
+.social-links {
+  list-style: none;
+}
+
+.social-links li {
+  margin-bottom: var(--space-2);
+}
+
+.contact-form {
+  background-color: var(--color-surface);
+  padding: var(--space-10);
+}
+
+.form-group {
+  margin-bottom: var(--space-6);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  transition: border-color var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-top: var(--space-4);
+}
+
+/* ============================================
+   COMING SOON PAGE
+   ============================================ */
+.coming-soon-section {
+  padding: var(--space-24) 0;
+  text-align: center;
+}
+
+.coming-soon-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.coming-soon-icon {
+  color: var(--color-accent);
+  margin-bottom: var(--space-8);
+}
+
+.coming-soon-icon svg {
+  display: inline-block;
+}
+
+.coming-soon-heading {
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-8);
+}
+
+.coming-soon-description {
+  text-align: left;
+  margin-bottom: var(--space-12);
+}
+
+.coming-soon-description p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.feature-list {
+  list-style: none;
+  margin: var(--space-6) 0;
+}
+
+.feature-list li {
+  padding: var(--space-2) 0 var(--space-2) var(--space-8);
+  position: relative;
+  color: var(--color-text-secondary);
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.coming-soon-cta {
+  text-align: center;
+  margin: var(--space-12) 0;
+}
+
+.cta-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-6);
+}
+
+.back-to-home {
+  margin-top: var(--space-16);
+}
+
+.link-arrow {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: var(--space-4);
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-6xl: 3rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-4);
+  }
+
+  .main-navigation.active {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .selection-grid,
+  .highlights-grid,
+  .gallery-sections,
+  .artists-grid,
+  .exhibition-grid,
+  .artwork-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-header-content,
+  .artwork-detail-layout,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .exhibition-featured-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .selection-grid,
+  .gallery-sections,
+  .artist-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+  }
+}

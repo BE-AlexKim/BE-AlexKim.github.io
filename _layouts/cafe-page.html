@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Ember & Hearth</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Artisanal cafe serving craft coffee and seasonal brunch{% endif %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Petrona:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/cafe.css' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    {% seo %}
+</head>
+<body class="cafe-brand">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    {% include cafe-nav.html %}
+
+    <main id="main-content" class="cafe-container">
+        {% if page.title and page.show_header %}
+        <header class="cafe-page-header">
+            <div class="container">
+                <h1 class="cafe-page-title">{{ page.title | escape }}</h1>
+                {% if page.subtitle %}
+                <p class="cafe-page-subtitle">{{ page.subtitle | escape }}</p>
+                {% endif %}
+            </div>
+        </header>
+        {% endif %}
+
+        <div class="cafe-page-content">
+            {{ content }}
+        </div>
+    </main>
+
+    {% include cafe-footer.html %}
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

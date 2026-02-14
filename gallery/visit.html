@@ -1,0 +1,76 @@
+---
+layout: gallery-page
+title: "Visit"
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h1 class="gallery-section-title">{{ t.visit.plan_visit }}</h1>
+      <p class="gallery-section-description">
+        We welcome you to experience contemporary art in a contemplative setting.
+        Our gallery is designed to provide an unhurried, intimate encounter with exceptional works.
+      </p>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+      <div class="card p-8">
+        <h3 class="text-xl mb-4">{{ t.visit.location }}</h3>
+        <p class="text-secondary">
+          <strong>44BYION STUDIO</strong><br>
+          Level 2, 234 Crown Street<br>
+          Surry Hills NSW 2010<br>
+          Sydney, Australia
+        </p>
+      </div>
+
+      <div class="card p-8">
+        <h3 class="text-xl mb-4">{{ t.visit.hours }}</h3>
+        <ul class="text-secondary" style="list-style: none;">
+          <li class="mb-2"><strong>Wednesday - Friday:</strong> 11:00 AM - 6:00 PM</li>
+          <li class="mb-2"><strong>Saturday - Sunday:</strong> 10:00 AM - 6:00 PM</li>
+          <li class="mb-2"><strong>Monday - Tuesday:</strong> Closed</li>
+        </ul>
+      </div>
+
+      <div class="card p-8">
+        <h3 class="text-xl mb-4">{{ t.visit.accessibility }}</h3>
+        <p class="text-secondary">
+          44BYION STUDIO is committed to providing an inclusive experience for all visitors. wheelchair accessible
+          entrance via Crown Street.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container text-center">
+    <h2 class="mb-8">{{ t.visit.entry_free }}</h2>
+    <p class="text-lg max-w-narrow mx-auto mb-12">
+      {{ t.visit.free_desc }}
+    </p>
+    <div class="contact-info">
+      <p class="text-xl mb-4">{{ t.contact.phone }}: +61 2 9999 8888</p>
+      <p class="text-xl">{{ t.contact.email }}: <a href="mailto:{{ site.email }}" class="text-accent">{{ site.email
+          }}</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .p-8 {
+    padding: var(--space-8);
+  }
+
+  .max-w-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

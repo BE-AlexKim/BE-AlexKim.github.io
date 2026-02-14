@@ -1,0 +1,25 @@
+<nav class="cafe-nav" aria-label="Cafe Main Navigation">
+  <div class="cafe-nav-logo">
+    <a href="{{ '/cafe/' | relative_url }}">EMBER & HEARTH</a>
+  </div>
+  <ul class="cafe-nav-menu">
+    <li {% if page.url contains '/cafe/index' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/' | relative_url }}">Home</a>
+    </li>
+    <li {% if page.url contains '/cafe/menu' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/menu.html' | relative_url }}">Menu</a>
+    </li>
+    <li {% if page.url contains '/cafe/coffee' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/coffee.html' | relative_url }}">Coffee</a>
+    </li>
+    <li {% if page.url contains '/cafe/visit' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/visit.html' | relative_url }}">Visit</a>
+    </li>
+    <li {% if page.url contains '/cafe/reserve' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/reserve.html' | relative_url }}">Reserve</a>
+    </li>
+    <li {% if page.url contains '/cafe/about' %}class="active"{% endif %}>
+      <a href="{{ '/cafe/about.html' | relative_url }}">About</a>
+    </li>
+  </ul>
+</nav>

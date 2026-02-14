@@ -1,0 +1,436 @@
+/* ============================================
+   EMBER & HEARTH CAFE BRAND STYLES
+   Warm, inviting, cozy
+   ============================================ */
+
+:root {
+  /* Cafe Colors */
+  --hearth-cream: #F9F6F1;
+  --ember-terracotta: #C97456;
+  --roasted-coffee: #3D2B1F;
+  --morning-gold: #E6B85D;
+  --soft-linen: #E8E3DA;
+  --sage-green: #9CAA93;
+  --warm-blush: #E5C4B5;
+}
+
+/* Typography - Cafe Brand */
+.cafe-brand {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--hearth-cream);
+  color: var(--roasted-coffee);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.cafe-brand h1,
+.cafe-brand h2,
+.cafe-brand h3,
+.cafe-brand h4 {
+  font-family: 'Petrona', serif;
+  color: var(--roasted-coffee);
+}
+
+.cafe-brand h1 {
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.cafe-brand h2 {
+  font-size: clamp(30px, 4vw, 38px);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.cafe-brand h3 {
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: 500;
+  margin-bottom: 0.875rem;
+}
+
+/* Layout - Cafe */
+.cafe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.cafe-hero {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--hearth-cream);
+  padding: 80px 20px;
+  position: relative;
+}
+
+.cafe-hero-content {
+  max-width: 800px;
+  z-index: 2;
+}
+
+/* Navigation - Cafe */
+.cafe-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background-color: var(--hearth-cream);
+  border-bottom: 1px solid var(--soft-linen);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cafe-nav-logo a {
+  font-family: 'Petrona', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--roasted-coffee);
+  text-decoration: none;
+}
+
+.cafe-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  align-items: center;
+}
+
+.cafe-nav-menu li a {
+  color: var(--roasted-coffee);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cafe-nav-menu li a:hover,
+.cafe-nav-menu li.active a {
+  color: var(--ember-terracotta);
+}
+
+/* Menu Section */
+.menu-section {
+  margin: 60px 0;
+}
+
+.menu-category-title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--roasted-coffee);
+  border-bottom: 2px solid var(--ember-terracotta);
+  padding-bottom: 15px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--soft-linen);
+}
+
+.menu-item-info {
+  flex: 1;
+}
+
+.menu-item-name {
+  font-family: 'Petrona', serif;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--roasted-coffee);
+  margin-bottom: 8px;
+}
+
+.menu-item-description {
+  font-size: 15px;
+  color: var(--roasted-coffee);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.menu-item-price {
+  font-family: 'Petrona', serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ember-terracotta);
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+/* Buttons - Cafe */
+.cafe-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: var(--ember-terracotta);
+  color: var(--hearth-cream);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.cafe-btn:hover {
+  background-color: var(--roasted-coffee);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 43, 31, 0.2);
+}
+
+.cafe-btn-secondary {
+  background-color: transparent;
+  color: var(--ember-terracotta);
+  border: 2px solid var(--ember-terracotta);
+}
+
+.cafe-btn-secondary:hover {
+  background-color: var(--ember-terracotta);
+  color: var(--hearth-cream);
+}
+
+/* Featured Brew Card */
+.featured-brew {
+  background-color: var(--soft-linen);
+  padding: 50px;
+  border-radius: 8px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.featured-brew-title {
+  font-size: clamp(20px, 2.5vw, 24px);
+  margin-bottom: 20px;
+  color: var(--ember-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.featured-brew-name {
+  font-family: 'Petrona', serif;
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: 15px;
+}
+
+.featured-brew-description {
+  font-size: 17px;
+  color: var(--roasted-coffee);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Coffee Origin Card */
+.coffee-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin: 60px 0;
+}
+
+.coffee-card {
+  background-color: var(--soft-linen);
+  padding: 40px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-origin {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ember-terracotta);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.coffee-name {
+  font-family: 'Petrona', serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.coffee-details {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: var(--roasted-coffee);
+  opacity: 0.8;
+}
+
+.coffee-notes {
+  font-size: 15px;
+  color: var(--roasted-coffee);
+  line-height: 1.6;
+}
+
+/* Section Spacing */
+.cafe-section {
+  padding: 80px 0;
+}
+
+.cafe-section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.cafe-section-title {
+  font-size: clamp(30px, 4vw, 38px);
+  margin-bottom: 20px;
+}
+
+.cafe-section-description {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--roasted-coffee);
+  opacity: 0.9;
+}
+
+/* Footer - Cafe */
+.cafe-footer {
+  background-color: var(--roasted-coffee);
+  color: var(--hearth-cream);
+  padding: 60px 0 40px;
+  margin-top: 120px;
+}
+
+.cafe-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.cafe-footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--morning-gold);
+  font-family: 'Petrona', serif;
+}
+
+.cafe-footer-menu {
+  list-style: none;
+}
+
+.cafe-footer-menu li {
+  margin-bottom: 12px;
+}
+
+.cafe-footer-menu a {
+  color: var(--hearth-cream);
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.cafe-footer-menu a:hover {
+  opacity: 1;
+  color: var(--morning-gold);
+}
+
+.cafe-footer-bottom {
+  padding-top: 40px;
+  border-top: 1px solid rgba(249, 246, 241, 0.2);
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Responsive - Cafe */
+@media (max-width: 968px) {
+  .cafe-container {
+    padding: 0 30px;
+  }
+
+  .cafe-nav {
+    padding: 20px 30px;
+  }
+
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cafe-brand {
+    font-size: 16px;
+  }
+
+  .cafe-container {
+    padding: 0 20px;
+  }
+
+  .cafe-nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .cafe-nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cafe-nav-menu li a {
+    font-size: 14px;
+  }
+
+  .menu-items {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item-price {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .featured-brew {
+    padding: 35px 25px;
+  }
+
+  .coffee-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cafe-section {
+    padding: 60px 0;
+  }
+
+  .cafe-footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

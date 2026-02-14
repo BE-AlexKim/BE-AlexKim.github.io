@@ -1,0 +1,45 @@
+<nav class="gallery-nav" aria-label="Gallery Main Navigation">
+  <div class="gallery-nav-logo">
+    <a href="{{ '/gallery/' | relative_url }}">44BYION STUDIO</a>
+  </div>
+  <ul class="gallery-nav-menu">
+    <li {% if page.url contains '/gallery/index' or page.url=='/gallery/' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/' | relative_url }}">Home</a>
+    </li>
+    <li {% if page.url contains '/gallery/exhibitions' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/exhibitions' | relative_url }}">Exhibitions</a>
+    </li>
+    <li {% if page.url contains '/gallery/artists' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/artists' | relative_url }}">Artists</a>
+    </li>
+    <li {% if page.url contains '/gallery/collection' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/collection' | relative_url }}">Collection</a>
+    </li>
+    <li {% if page.url contains '/gallery/visit' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/visit' | relative_url }}">Visit</a>
+    </li>
+    <li {% if page.url contains '/gallery/about' %}class="active" {% endif %}>
+      <a href="{{ '/gallery/about' | relative_url }}">About</a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  // Sophisticated scroll effect for navigation - Plus X style
+  (function () {
+    const nav = document.querySelector('.gallery-nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', function () {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    }, { passive: true });
+  })();
+</script>

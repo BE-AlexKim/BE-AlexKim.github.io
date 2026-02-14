@@ -1,0 +1,10 @@
+# This file ensures the images directory is tracked by git
+#
+# Add your images in the following subdirectories:
+# - assets/images/artists/
+# - assets/images/exhibitions/
+# - assets/images/artworks/
+# - assets/images/selection-gallery.jpg
+# - assets/images/selection-cafe.jpg
+# - assets/images/logo.png
+# - assets/images/favicon.png

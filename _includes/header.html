@@ -1,0 +1,23 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-content">
+
+      <div class="site-branding">
+        <a href="{{ '/' | relative_url }}" class="site-logo">
+          <span class="site-title">{{ site.title | escape }}</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="main-navigation" aria-label="Main navigation">
+        {% include navigation.html %}
+      </nav>
+
+    </div>
+  </div>
+</header>

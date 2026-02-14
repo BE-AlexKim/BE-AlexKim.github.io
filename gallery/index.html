@@ -1,0 +1,142 @@
+---
+layout: gallery-page
+title: "Home"
+description: "44BYION STUDIO - Contemporary art space in Sydney showcasing curated exhibitions"
+---
+
+<!-- ========================================
+     SPOTIFY-INSPIRED DESIGN SYSTEM
+     Bold, Vibrant, Modern
+     Black + Yellow + White
+     ======================================== -->
+
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<!-- 1. HERO SECTION - MINIMAL & ELEGANT -->
+<section class="gallery-hero">
+  <div class="container">
+    <span class="gallery-label">{{ t.nav.gallery | upcase }}</span>
+    <h1 class="gallery-hero-title">{{ t.gallery.title }}</h1>
+    <p class="gallery-hero-subtitle">{{ t.gallery.subtitle }}</p>
+    <div class="gallery-hero-divider"></div>
+    <p class="gallery-hero-description">
+      {{ t.site.description }}
+    </p>
+    <div class="gallery-cta-group">
+      <a href="{{ '/gallery/exhibitions' | relative_url }}" class="btn btn-primary">
+        {{ t.gallery.current_exhibitions }}
+      </a>
+      <a href="{{ '/gallery/collection' | relative_url }}" class="btn">
+        {{ t.gallery.from_collection }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FEATURED EXHIBITIONS - CLEAN GRID -->
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.gallery.current_exhibitions }}</h2>
+      <p class="gallery-section-description">
+        {{ t.exhibitions.subtitle }}
+      </p>
+    </div>
+
+    {% assign current_exhibitions = site.exhibitions | where: "status", "current" %}
+    {% if current_exhibitions.size > 0 %}
+    <div class="exhibition-grid">
+      {% for exhibition in current_exhibitions limit: 3 %}
+      <a href="{{ exhibition.url | relative_url }}" class="exhibition-card">
+        <div class="exhibition-image">
+          <img src="{{ exhibition.featured_image | relative_url }}" alt="{{ exhibition.title }}" loading="lazy">
+          <div class="exhibition-status status-current">{{ t.exhibitions.current }}</div>
+        </div>
+        <div class="exhibition-info">
+          <h3 class="exhibition-title">{{ exhibition.title }}</h3>
+          <p class="exhibition-curator">{{ t.exhibitions.curator }}: {{ exhibition.curator }}</p>
+          <p class="exhibition-dates">{{ exhibition.start_date | date: "%b %d" }} — {{ exhibition.end_date | date: "%b
+            %d, %Y" }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8">
+      <a href="{{ '/gallery/exhibitions' | relative_url }}" class="btn">
+        {{ t.common.view_all }}
+      </a>
+    </div>
+    {% else %}
+    <div class="empty-state text-center">
+      <p>{{ t.exhibitions.upcoming }}...</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- 3. FEATURED ARTISTS - ELEGANT CIRLCES -->
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.gallery.featured_artists }}</h2>
+      <p class="gallery-section-description">
+        {{ t.artists.subtitle }}
+      </p>
+    </div>
+
+    <div class="artist-grid">
+      {% for artist in site.artists limit: 4 %}
+      <a href="{{ artist.url | relative_url }}" class="artist-card">
+        <div class="artist-card-image">
+          <img src="{{ artist.featured_image | relative_url }}" alt="{{ artist.name }}" loading="lazy">
+        </div>
+        <div class="artist-info">
+          <h3 class="artist-name">{{ artist.name }}</h3>
+          <p class="artist-specialty">{{ artist.medium }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8">
+      <a href="{{ '/gallery/artists' | relative_url }}" class="btn">
+        {{ t.gallery.featured_artists }} {{ t.common.view_all }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COLLECTION PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.gallery.from_collection }}</h2>
+      <p class="gallery-section-description">
+        {{ t.collection.subtitle }}
+      </p>
+    </div>
+
+    {% assign featured_artworks = site.artworks | where: "featured", true %}
+    {% if featured_artworks.size > 0 %}
+    <div class="artwork-grid">
+      {% for artwork in featured_artworks limit: 3 %}
+      <a href="{{ artwork.url | relative_url }}" class="artwork-card">
+        <div class="artwork-card-image">
+          <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" loading="lazy">
+        </div>
+        <div class="artwork-card-info">
+          <h3 class="artwork-title">{{ artwork.title }}</h3>
+          <p class="artwork-artist">{{ artwork.artist }}</p>
+          <p class="artwork-meta">{{ artwork.medium }}, {{ artwork.dimensions }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-8">
+      <a href="{{ '/gallery/collection' | relative_url }}" class="btn btn-primary">
+        {{ t.collection.title }} {{ t.common.view_all }}
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>

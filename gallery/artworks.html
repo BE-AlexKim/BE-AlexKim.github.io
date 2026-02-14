@@ -1,0 +1,51 @@
+---
+layout: gallery-page
+title: Artworks
+subtitle: Browse our complete collection
+section: gallery
+show_header: true
+---
+
+<section class="artworks-section">
+
+  <div class="artworks-intro">
+    <p>
+      Explore our diverse collection of contemporary artworks spanning various mediums, styles,
+      and artistic approaches. Each piece represents a unique creative vision and artistic excellence.
+    </p>
+  </div>
+
+  <div class="artworks-filters">
+    <button class="filter-btn active" data-filter="all">All Artworks</button>
+    <button class="filter-btn" data-filter="available">Available</button>
+    <button class="filter-btn" data-filter="sold">Sold</button>
+  </div>
+
+  <div class="artwork-grid">
+    {% for artwork in site.artworks %}
+    <div class="artwork-card" data-status="{{ artwork.status }}">
+      <a href="{{ artwork.url | relative_url }}">
+        {% if artwork.image %}
+        <div class="artwork-image">
+          <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title | escape }}" loading="lazy">
+          {% if artwork.status == 'sold' %}
+          <span class="artwork-badge badge-sold">Sold</span>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="artwork-info">
+          <h3 class="artwork-title">{{ artwork.title }}</h3>
+          <p class="artwork-artist">{{ artwork.artist }}</p>
+          {% if artwork.year %}
+          <p class="artwork-year">{{ artwork.year }}</p>
+          {% endif %}
+          {% if artwork.medium %}
+          <p class="artwork-medium">{{ artwork.medium }}</p>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+</section>

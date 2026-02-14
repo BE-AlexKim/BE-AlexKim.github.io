@@ -1,0 +1,115 @@
+---
+layout: gallery-page
+title: Contact Us
+subtitle: Get in touch with our gallery
+section: gallery
+show_header: true
+---
+
+<section class="contact-section">
+
+  <div class="contact-content">
+
+    <div class="contact-info-section">
+      <h2>Visit Us</h2>
+
+      <div class="contact-info-block">
+        <h3>Location</h3>
+        <p>
+          123 Art Street<br>
+          Melbourne VIC 3000<br>
+          Australia
+        </p>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Opening Hours</h3>
+        <ul class="hours-list">
+          <li><strong>Tuesday - Saturday:</strong> 10am - 6pm</li>
+          <li><strong>Sunday:</strong> 11am - 5pm</li>
+          <li><strong>Monday:</strong> Closed</li>
+        </ul>
+        <p class="note">Last admission 30 minutes before closing</p>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Get in Touch</h3>
+        <p>
+          <strong>Email:</strong> <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><br>
+          <strong>Phone:</strong> +61 3 1234 5678
+        </p>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+          {% if site.social.instagram %}
+          <li>
+            <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener">
+              Instagram
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.facebook %}
+          <li>
+            <a href="https://facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener">
+              Facebook
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="contact-form-section">
+      <h2>Send Us a Message</h2>
+
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <select id="subject" name="subject" required>
+            <option value="">Please select...</option>
+            <option value="general">General Enquiry</option>
+            <option value="artwork">Artwork Enquiry</option>
+            <option value="exhibition">Exhibition Information</option>
+            <option value="private-viewing">Private Viewing</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+
+        <p class="form-note">
+          * Required fields. We respect your privacy and will never share your information.
+        </p>
+
+      </form>
+    </div>
+
+  </div>
+
+</section>

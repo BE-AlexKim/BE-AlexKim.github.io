@@ -1,0 +1,1249 @@
+/* ============================================
+   LIMINAL GALLERY - SPOTIFY DESIGN SYSTEM
+   Bold, Vibrant, Modern
+   Acid Yellow + Deep Black + Pure White
+   Bento Grids + Oversized Typography
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================
+   DESIGN TOKENS - SPOTIFY SYSTEM
+   ============================================ */
+
+:root {
+  /* SPOTIFY COLOR PALETTE */
+  --spotify-green: #1DB954;
+  --acid-yellow: #E8FF00;
+  --neon-yellow: #FFFF00;
+  --yellow-dark: #D4E600;
+  --deep-black: #000000;
+  --dark-grey: #181818;
+  --medium-grey: #535353;
+  --light-grey: #B3B3B3;
+  --pure-white: #FFFFFF;
+  --off-white: #F5F5F5;
+
+  /* Legacy Palette (Backwards Compatibility) */
+  --pure-black: var(--deep-black);
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
+
+  /* Yellow with Opacity */
+  --yellow-10: rgba(232, 255, 0, 0.1);
+  --yellow-20: rgba(232, 255, 0, 0.2);
+  --yellow-30: rgba(232, 255, 0, 0.3);
+  --yellow-40: rgba(232, 255, 0, 0.4);
+  --yellow-50: rgba(232, 255, 0, 0.5);
+  --yellow-60: rgba(232, 255, 0, 0.6);
+
+  /* SPACING SYSTEM - 8px base */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --space-20: 160px;
+
+  /* TYPOGRAPHY SCALE */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 96px;
+  --text-hero: clamp(64px, 10vw, 120px);
+
+  /* FONT WEIGHTS */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* LINE HEIGHTS */
+  --leading-tight: 1.0;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+
+  /* LETTER SPACING */
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  /* BORDER RADIUS - Spotify Rounded */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 999px;
+
+  /* SHADOWS */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+
+  /* Yellow Glow Shadows */
+  --shadow-yellow-sm: 0 4px 16px var(--yellow-30);
+  --shadow-yellow-md: 0 8px 24px var(--yellow-40);
+  --shadow-yellow-lg: 0 12px 32px var(--yellow-50);
+
+  /* Comic Pop-Art Shadow */
+  --shadow-comic: 12px 12px 0px var(--acid-yellow);
+  --shadow-comic-black: 8px 8px 0px var(--deep-black);
+
+  /* TRANSITIONS */
+  --ease-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* GRID SYSTEM */
+  --container-max: 1440px;
+  --container-padding: 48px;
+  --grid-gap: 24px;
+}
+
+/* ============================================
+   BASE RESET
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--pure-white);
+  color: var(--deep-black);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--deep-black);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--ease-base);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   LAYOUT CONTAINER
+   ============================================ */
+
+.gallery-brand {
+  background: var(--pure-white);
+  min-height: 100vh;
+}
+
+.gallery-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ============================================
+   NAVIGATION (Keep existing from Plus X)
+   ============================================ */
+
+.gallery-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--pure-white);
+  border-bottom: 2px solid var(--deep-black);
+  padding: var(--space-3) var(--container-padding);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  transition: all var(--ease-base);
+}
+
+.gallery-nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-nav-logo a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: var(--weight-black);
+  color: var(--deep-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-snug);
+}
+
+.gallery-nav-logo a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--acid-yellow);
+  transition: width var(--ease-smooth);
+}
+
+.gallery-nav-logo a:hover::after {
+  width: 100%;
+}
+
+.gallery-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gallery-nav-menu li a {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--medium-grey);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  padding: var(--space-1) var(--space-2);
+  position: relative;
+}
+
+.gallery-nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--acid-yellow);
+  transition: width var(--ease-smooth);
+}
+
+.gallery-nav-menu li a:hover {
+  color: var(--deep-black);
+}
+
+.gallery-nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   1. HERO SECTION - ACID YELLOW BLOCK
+   ============================================ */
+
+.spotify-hero {
+  position: relative;
+  min-height: 70vh;
+  background: var(--acid-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) var(--space-6);
+  overflow: hidden;
+}
+
+/* Grainy Texture Overlay */
+.spotify-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="2" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3D Glossy Sphere */
+.spotify-hero-3d-sphere {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-yellow) 0%, var(--acid-yellow) 50%, var(--yellow-dark) 100%);
+  box-shadow:
+    inset -20px -20px 40px rgba(0, 0, 0, 0.1),
+    inset 20px 20px 40px rgba(255, 255, 255, 0.4),
+    0 20px 60px var(--yellow-40);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.spotify-hero-3d-sphere::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+}
+
+/* Hero Content */
+.spotify-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.spotify-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(72px, 10vw, 120px);
+  font-weight: var(--weight-black);
+  line-height: 0.9;
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-4);
+}
+
+.spotify-hero-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-6);
+}
+
+.spotify-hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--deep-black);
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+.spotify-hero-cta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   SPOTIFY BUTTONS - PILL SHAPES
+   ============================================ */
+
+/* Yellow Pill Button (Primary) */
+.btn-spotify-yellow {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--deep-black);
+  color: var(--acid-yellow);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  cursor: pointer;
+  transition: all var(--ease-base);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-spotify-yellow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(232, 255, 0, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-spotify-yellow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(232, 255, 0, 0.4);
+}
+
+.btn-spotify-yellow:hover::before {
+  left: 100%;
+}
+
+.btn-spotify-yellow:active {
+  transform: scale(0.98);
+}
+
+/* Inverted Button (Yellow on Black background) */
+.btn-spotify-inverted {
+  background: transparent;
+  color: var(--deep-black);
+  border: 2px solid var(--deep-black);
+  box-shadow: none;
+}
+
+.btn-spotify-inverted:hover {
+  background: var(--deep-black);
+  color: var(--acid-yellow);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Black Button */
+.btn-spotify-black {
+  background: var(--deep-black);
+  color: var(--pure-white);
+  border: none;
+}
+
+.btn-spotify-black:hover {
+  background: var(--dark-grey);
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Large Black Button */
+.btn-spotify-black-large {
+  padding: 24px 64px;
+  background: var(--deep-black);
+  color: var(--acid-yellow);
+  font-size: var(--text-lg);
+}
+
+.btn-spotify-black-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Outline Button */
+.btn-spotify-outline {
+  background: transparent;
+  color: var(--deep-black);
+  border: 2px solid var(--deep-black);
+}
+
+.btn-spotify-outline:hover {
+  background: var(--deep-black);
+  color: var(--pure-white);
+}
+
+/* ============================================
+   PILL BADGES
+   ============================================ */
+
+.spotify-pill-badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--deep-black);
+  color: var(--pure-white);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.spotify-pill-black {
+  background: var(--deep-black);
+  color: var(--acid-yellow);
+}
+
+/* ============================================
+   2. SECTION SYSTEM - Color Blocks
+   ============================================ */
+
+.spotify-section {
+  padding: var(--space-12) 0;
+  position: relative;
+}
+
+.spotify-section-white {
+  background: var(--pure-white);
+}
+
+.spotify-section-black {
+  background: var(--deep-black);
+}
+
+.spotify-section-editorial {
+  background: var(--off-white);
+}
+
+.spotify-section-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto var(--space-8);
+}
+
+.spotify-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-4);
+}
+
+.spotify-title-white {
+  color: var(--pure-white);
+}
+
+.spotify-section-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--medium-grey);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.spotify-subtitle-grey {
+  color: var(--light-grey);
+}
+
+/* ============================================
+   3. BENTO GRID - Exhibition Cards
+   ============================================ */
+
+.spotify-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+/* Card Sizes */
+.spotify-card-hero {
+  grid-column: span 8;
+}
+
+.spotify-card-medium {
+  grid-column: span 4;
+}
+
+.spotify-card-small {
+  grid-column: span 4;
+}
+
+/* Bento Card Component */
+.spotify-bento-card {
+  position: relative;
+  background: var(--pure-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--ease-smooth);
+  box-shadow: var(--shadow-md);
+}
+
+.spotify-bento-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-comic);
+}
+
+.spotify-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.spotify-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  background: var(--grey-100);
+}
+
+.spotify-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease-slow);
+}
+
+.spotify-bento-card:hover .spotify-card-image img {
+  transform: scale(1.05);
+}
+
+/* Badge on Card */
+.spotify-badge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  background: var(--acid-yellow);
+  color: var(--deep-black);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-radius: var(--radius-full);
+  z-index: 2;
+}
+
+.spotify-badge-current {
+  background: var(--acid-yellow);
+  color: var(--deep-black);
+}
+
+/* Card Content */
+.spotify-card-content {
+  padding: var(--space-4);
+}
+
+.spotify-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--deep-black);
+  margin-bottom: var(--space-2);
+}
+
+.spotify-card-artist {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--medium-grey);
+  margin-bottom: var(--space-1);
+}
+
+.spotify-card-dates {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--light-grey);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================
+   4. ARTIST GRID - Circular Images
+   ============================================ */
+
+.spotify-artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.spotify-artist-card {
+  position: relative;
+  background: var(--pure-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  transition: all var(--ease-smooth);
+  text-align: center;
+}
+
+.spotify-artist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 0 4px var(--acid-yellow);
+}
+
+.spotify-artist-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.spotify-artist-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  background: var(--grey-200);
+}
+
+.spotify-artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease-slow);
+}
+
+.spotify-artist-card:hover .spotify-artist-image img {
+  transform: scale(1.08);
+}
+
+.spotify-artist-info {
+  padding: var(--space-2) 0;
+}
+
+.spotify-artist-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-1);
+}
+
+.spotify-artist-medium {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--medium-grey);
+}
+
+/* ============================================
+   5. EDITORIAL LAYOUT - Collection Preview
+   ============================================ */
+
+.spotify-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.spotify-editorial-image {
+  position: relative;
+}
+
+.spotify-editorial-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--ease-smooth);
+}
+
+.spotify-editorial-image:hover img {
+  transform: scale(1.02);
+}
+
+.spotify-editorial-content {
+  position: relative;
+  padding: var(--space-6);
+}
+
+.spotify-editorial-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.spotify-editorial-artist {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--medium-grey);
+  margin-bottom: var(--space-4);
+}
+
+.spotify-editorial-description {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--dark-grey);
+  margin-bottom: var(--space-6);
+}
+
+/* Geometric Accent */
+.spotify-geometric-accent {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--acid-yellow), var(--yellow-dark));
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* ============================================
+   6. ABOUT SECTION - Asymmetric Grid
+   ============================================ */
+
+.spotify-about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.spotify-about-content {
+  padding: var(--space-6);
+}
+
+.spotify-about-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.spotify-about-text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-loose);
+  color: var(--dark-grey);
+  margin-bottom: var(--space-4);
+}
+
+.spotify-about-cta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+/* 3D Visual Element */
+.spotify-3d-element {
+  position: relative;
+  background: var(--pure-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify-3d-sphere-large {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-yellow), var(--acid-yellow), var(--yellow-dark));
+  box-shadow:
+    inset -20px -20px 40px rgba(0, 0, 0, 0.1),
+    inset 20px 20px 40px rgba(255, 255, 255, 0.4),
+    0 20px 50px var(--yellow-40);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.spotify-3d-sphere-large::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+}
+
+.spotify-3d-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--deep-black);
+}
+
+/* ============================================
+   7. VISIT CTA BLOCK - Full Width Yellow
+   ============================================ */
+
+.spotify-cta-block {
+  position: relative;
+  background: var(--acid-yellow);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Grainy Texture */
+.spotify-cta-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="2" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotify-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.spotify-cta-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--deep-black);
+  margin-bottom: var(--space-4);
+}
+
+.spotify-cta-subtitle {
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--deep-black);
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.spotify-cta-center {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+.spotify-empty-state {
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  background: var(--off-white);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--grey-300);
+}
+
+.spotify-empty-content h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-2);
+}
+
+.spotify-empty-content p {
+  font-size: var(--text-base);
+  color: var(--medium-grey);
+}
+
+/* ============================================
+   FOOTER (Keep existing)
+   ============================================ */
+
+.gallery-footer {
+  background: var(--deep-black);
+  color: var(--pure-white);
+  padding: var(--space-12) 0 var(--space-6);
+  border-top: 4px solid var(--acid-yellow);
+  margin-top: 0;
+}
+
+.gallery-footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.gallery-footer-section h4 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-black);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--pure-white);
+}
+
+.gallery-footer-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-footer-menu li {
+  margin-bottom: var(--space-2);
+}
+
+.gallery-footer-menu a {
+  color: var(--light-grey);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transition: all var(--ease-base);
+}
+
+.gallery-footer-menu a:hover {
+  color: var(--acid-yellow);
+  transform: translateX(4px);
+}
+
+.gallery-footer-bottom {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--grey-800);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--medium-grey);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================
+   SKIP LINK - Accessibility
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+  padding: var(--space-2) var(--space-4);
+  background: var(--acid-yellow);
+  color: var(--deep-black);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: var(--space-3);
+  top: var(--space-3);
+  width: auto;
+  height: auto;
+  overflow: visible;
+  outline: 3px solid var(--deep-black);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+
+/* Tablet (968px) */
+@media (max-width: 968px) {
+  :root {
+    --container-padding: 32px;
+    --grid-gap: 16px;
+  }
+
+  .spotify-hero {
+    min-height: 60vh;
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .spotify-hero-3d-sphere {
+    width: 140px;
+    height: 140px;
+    top: 5%;
+    right: 5%;
+  }
+
+  .spotify-bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .spotify-card-hero,
+  .spotify-card-medium,
+  .spotify-card-small {
+    grid-column: span 6;
+  }
+
+  .spotify-artist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .spotify-editorial-grid,
+  .spotify-about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .spotify-section {
+    padding: var(--space-8) 0;
+  }
+}
+
+/* Mobile Large (640px) */
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 24px;
+  }
+
+  .gallery-nav {
+    padding: var(--space-2) var(--space-3);
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .gallery-nav-menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .spotify-hero {
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .spotify-hero-3d-sphere {
+    width: 100px;
+    height: 100px;
+  }
+
+  .spotify-hero-cta {
+    flex-direction: column;
+  }
+
+  .spotify-bento-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .spotify-card-hero,
+  .spotify-card-medium,
+  .spotify-card-small {
+    grid-column: span 1;
+  }
+
+  .spotify-artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .spotify-section-title {
+    font-size: clamp(36px, 8vw, 48px);
+  }
+
+  .btn-spotify-yellow,
+  .btn-spotify-black,
+  .btn-spotify-inverted,
+  .btn-spotify-outline {
+    padding: 16px 32px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile Small (480px) */
+@media (max-width: 480px) {
+  .spotify-hero-title {
+    font-size: clamp(48px, 12vw, 72px);
+  }
+
+  .spotify-section-title {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .spotify-artist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotify-cta-title {
+    font-size: clamp(36px, 8vw, 48px);
+  }
+
+  .btn-spotify-black-large {
+    padding: 18px 36px;
+    font-size: var(--text-base);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .gallery-nav,
+  .gallery-footer,
+  .spotify-hero-3d-sphere,
+  .spotify-3d-sphere-large,
+  .btn-spotify-yellow,
+  .btn-spotify-black,
+  .btn-spotify-inverted,
+  .btn-spotify-outline {
+    display: none;
+  }
+
+  .spotify-section {
+    page-break-inside: avoid;
+  }
+}

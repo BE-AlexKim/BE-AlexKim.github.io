@@ -1,0 +1,22 @@
+# Main Navigation
+main:
+  - title: Home
+    url: /
+
+  - title: Gallery
+    url: /gallery
+    subitems:
+      - title: All Gallery
+        url: /gallery
+      - title: Exhibitions
+        url: /gallery/exhibitions
+      - title: Artworks
+        url: /gallery/artworks
+      - title: Artists
+        url: /gallery/artists
+
+  - title: Cafe
+    url: /cafe
+
+  - title: Contact
+    url: /gallery/contact

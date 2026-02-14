@@ -1,0 +1,88 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<div class="language-switcher">
+  <span class="language-label">{{ t.language.label }}</span>
+  <button 
+    class="lang-btn {% if lang == 'en' %}active{% endif %}" 
+    onclick="switchLanguage('en')"
+    aria-label="Switch to English">
+    {{ t.language.english }}
+  </button>
+  <span class="separator">/</span>
+  <button 
+    class="lang-btn {% if lang == 'ko' %}active{% endif %}" 
+    onclick="switchLanguage('ko')"
+    aria-label="한국어로 전환">
+    {{ t.language.korean }}
+  </button>
+</div>
+
+<script>
+function switchLanguage(newLang) {
+  // Store language preference
+  localStorage.setItem('preferredLanguage', newLang);
+  
+  // Get current path
+  const currentPath = window.location.pathname;
+  
+  // Update HTML lang attribute
+  document.documentElement.lang = newLang;
+  
+  // Reload page to apply language change
+  // In a more sophisticated setup, this would update content dynamically
+  window.location.reload();
+}
+
+// On page load, check for stored language preference
+document.addEventListener('DOMContentLoaded', function() {
+  const preferredLang = localStorage.getItem('preferredLanguage');
+  if (preferredLang && preferredLang !== '{{ lang }}') {
+    document.documentElement.lang = preferredLang;
+    // Optionally reload to apply preference
+  }
+});
+</script>
+
+<style>
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 1rem);
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.language-label {
+  color: var(--text-tertiary, #8b8b8b);
+  font-weight: var(--weight-medium, 500);
+  letter-spacing: var(--tracking-wide, 0.025em);
+  text-transform: uppercase;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: var(--space-1, 0.5rem) var(--space-2, 1rem);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--weight-medium, 500);
+  color: var(--text-tertiary, #8b8b8b);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  letter-spacing: var(--tracking-wide, 0.025em);
+}
+
+.lang-btn:hover {
+  color: var(--text-primary, #1a1a1a);
+}
+
+.lang-btn.active {
+  color: var(--text-primary, #1a1a1a);
+  font-weight: var(--weight-semibold, 600);
+}
+
+.separator {
+  color: var(--border-subtle, #e8e6e0);
+  user-select: none;
+}
+</style>

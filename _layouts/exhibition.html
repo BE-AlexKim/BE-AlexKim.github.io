@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<article class="exhibition-detail">
+
+  <header class="exhibition-header">
+    <div class="container">
+      {% if page.featured_image %}
+      <div class="exhibition-featured-image">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title | escape }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="exhibition-header-info">
+        <h1 class="exhibition-title">{{ page.title | escape }}</h1>
+        {% if page.curator %}
+        <p class="exhibition-curator">Curated by {{ page.curator }}</p>
+        {% endif %}
+        {% if page.start_date and page.end_date %}
+        <p class="exhibition-dates">
+          <time datetime="{{ page.start_date }}">{{ page.start_date | date: "%B %d, %Y" }}</time> -
+          <time datetime="{{ page.end_date }}">{{ page.end_date | date: "%B %d, %Y" }}</time>
+        </p>
+        {% endif %}
+        {% if page.status %}
+        <span class="exhibition-status status-{{ page.status }}">{{ page.status | capitalize }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="exhibition-content">
+    <div class="container">
+
+      <section class="exhibition-description">
+        <h2>About This Exhibition</h2>
+        {{ content }}
+      </section>
+
+      {% if page.artists %}
+      <section class="exhibition-artists">
+        <h2>Featured Artists</h2>
+        <div class="artist-list">
+          {% for artist_name in page.artists %}
+            {% assign artist = site.artists | where: "name", artist_name | first %}
+            {% if artist %}
+            <div class="artist-card">
+              <a href="{{ artist.url | relative_url }}">
+                {% if artist.image %}
+                <div class="artist-card-image">
+                  <img src="{{ artist.image | relative_url }}" alt="{{ artist.name | escape }}" loading="lazy">
+                </div>
+                {% endif %}
+                <div class="artist-card-info">
+                  <h3>{{ artist.name }}</h3>
+                  {% if artist.nationality %}
+                  <p>{{ artist.nationality }}</p>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% assign exhibition_artworks = site.artworks | where: "exhibition", page.title %}
+      {% if exhibition_artworks.size > 0 %}
+      <section class="exhibition-artworks">
+        <h2>Artworks in This Exhibition</h2>
+        <div class="artwork-grid">
+          {% for artwork in exhibition_artworks %}
+          <div class="artwork-card">
+            <a href="{{ artwork.url | relative_url }}">
+              {% if artwork.image %}
+              <div class="artwork-image">
+                <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title | escape }}" loading="lazy">
+              </div>
+              {% endif %}
+              <div class="artwork-info">
+                <h3 class="artwork-title">{{ artwork.title }}</h3>
+                <p class="artwork-artist">{{ artwork.artist }}</p>
+                {% if artwork.year %}
+                <p class="artwork-year">{{ artwork.year }}</p>
+                {% endif %}
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+    </div>
+  </div>
+
+</article>

@@ -1,0 +1,277 @@
+---
+layout: gallery-page
+title: Exhibitions
+subtitle: Curated collections and thematic showcases
+section: gallery
+show_header: true
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h1 class="gallery-section-title">{{ t.exhibitions.title }}</h1>
+      <p class="gallery-section-description">
+        {{ t.exhibitions.subtitle }}
+      </p>
+    </div>
+
+    <!-- Current Exhibitions -->
+    {% assign current_exhibitions = site.exhibitions | where: "status", "current" %}
+    {% if current_exhibitions.size > 0 %}
+    <div class="exhibition-category">
+      <h2 class="category-heading">{{ t.exhibitions.current }}</h2>
+      <div class="exhibition-grid">
+        {% for exhibition in current_exhibitions %}
+        <a href="{{ exhibition.url | relative_url }}" class="exhibition-card">
+          <div class="exhibition-image">
+            <img src="{{ exhibition.featured_image | relative_url }}" alt="{{ exhibition.title }}" loading="lazy">
+            <div class="exhibition-status status-current">{{ t.exhibitions.current }}</div>
+          </div>
+          <div class="exhibition-info">
+            <h3 class="exhibition-title">{{ exhibition.title }}</h3>
+            <p class="exhibition-curator">{{ t.exhibitions.curator }}: {{ exhibition.curator }}</p>
+            <p class="exhibition-dates">{{ exhibition.start_date | date: "%B %d" }} — {{ exhibition.end_date | date: "%B
+              %d, %Y" }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Upcoming Exhibitions -->
+    {% assign upcoming_exhibitions = site.exhibitions | where: "status", "upcoming" %}
+    {% if upcoming_exhibitions.size > 0 %}
+    <div class="exhibition-category mt-16">
+      <h2 class="category-heading">{{ t.exhibitions.upcoming }}</h2>
+      <div class="exhibition-grid">
+        {% for exhibition in upcoming_exhibitions %}
+        <div class="exhibition-card">
+          <div class="exhibition-image">
+            {% if exhibition.featured_image %}
+            <img src="{{ exhibition.featured_image | relative_url }}" alt="{{ exhibition.title }}" loading="lazy">
+            {% else %}
+            <div class="mist-placeholder" style="aspect-ratio: 16/10; background: var(--mist-grey);"></div>
+            {% endif %}
+            <div class="exhibition-status status-upcoming">{{ t.exhibitions.upcoming }}</div>
+          </div>
+          <div class="exhibition-info">
+            <h3 class="exhibition-title">{{ exhibition.title }}</h3>
+            <p class="exhibition-curator">{{ t.exhibitions.curator }}: {{ exhibition.curator }}</p>
+            <p class="exhibition-dates">{{ exhibition.start_date | date: "%B %d" }} — {{ exhibition.end_date | date: "%B
+              %d, %Y" }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Past Exhibitions -->
+    {% assign past_exhibitions = site.exhibitions | where: "status", "past" %}
+    {% if past_exhibitions.size > 0 %}
+    <div class="exhibition-category mt-16">
+      <h2 class="category-heading">{{ t.exhibitions.past }}</h2>
+      <div class="exhibition-grid">
+        {% for exhibition in past_exhibitions %}
+        <a href="{{ exhibition.url | relative_url }}" class="exhibition-card">
+          <div class="exhibition-image">
+            <img src="{{ exhibition.featured_image | relative_url }}" alt="{{ exhibition.title }}" loading="lazy">
+            <div class="exhibition-status status-past">{{ t.exhibitions.past }}</div>
+          </div>
+          <div class="exhibition-info">
+            <h3 class="exhibition-title">{{ exhibition.title }}</h3>
+            <p class="exhibition-curator">{{ t.exhibitions.curator }}: {{ exhibition.curator }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- GALLERY SPACE SHOWCASE SECTION -->
+<section class="section bg-secondary">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.gallery.our_space | upcase }}</h2>
+      <p class="gallery-section-description">
+        A 250 sqm contemporary gallery space designed with clean lines, abundant natural light,
+        and versatile exhibition areas. Our space provides the perfect backdrop for experiencing
+        art in an intimate, contemplative setting.
+      </p>
+    </div>
+
+    <!-- Main Spaces Grid (3 Cards) -->
+    <div class="space-grid">
+      <!-- Main Exhibition Hall -->
+      <div class="space-card">
+        <div class="space-card-image">
+          <img src="{{ '/assets/images/Gallery Background photo/space (1).jpg' | relative_url }}"
+            alt="Main Exhibition Hall" loading="lazy">
+        </div>
+        <div class="space-card-info">
+          <h3 class="space-card-title">MAIN EXHIBITION HALL</h3>
+          <p class="space-card-specs">120 sqm • 4m Ceilings • Column-Free</p>
+          <p class="space-card-description">
+            Our largest exhibition space features soaring ceilings and an open floor plan,
+            providing maximum flexibility for installations and large-scale artworks.
+          </p>
+        </div>
+      </div>
+
+      <!-- North Gallery Wing -->
+      <div class="space-card">
+        <div class="space-card-image">
+          <img src="{{ '/assets/images/Gallery Background photo/space (5).jpg' | relative_url }}"
+            alt="North Gallery Wing" loading="lazy">
+        </div>
+        <div class="space-card-info">
+          <h3 class="space-card-title">NORTH GALLERY WING</h3>
+          <p class="space-card-specs">80 sqm • Natural Northern Light • Solo Shows</p>
+          <p class="space-card-description">
+            Bathed in consistent natural light from north-facing windows, this intimate
+            space is ideal for focused solo exhibitions and delicate works.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Room -->
+      <div class="space-card">
+        <div class="space-card-image">
+          <img src="{{ '/assets/images/Gallery Background photo/space (8).jpg' | relative_url }}" alt="Project Room"
+            loading="lazy">
+        </div>
+        <div class="space-card-info">
+          <h3 class="space-card-title">PROJECT ROOM</h3>
+          <p class="space-card-specs">50 sqm • Experimental Space • Emerging Artists</p>
+          <p class="space-card-description">
+            A dedicated space for experimental works, new media installations, and emerging
+            artists exploring innovative exhibition formats.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail Images Grid (4 Smaller Images) -->
+    <div class="detail-image-grid">
+      <div class="detail-image-card">
+        <img src="{{ '/assets/images/Gallery Background photo/space (3).jpg' | relative_url }}"
+          alt="Architectural Details" loading="lazy">
+        <div class="detail-overlay">
+          <span class="detail-label">ARCHITECTURAL DETAILS</span>
+        </div>
+      </div>
+
+      <div class="detail-image-card">
+        <img src="{{ '/assets/images/Gallery Background photo/space (10).jpg' | relative_url }}" alt="Natural Lighting"
+          loading="lazy">
+        <div class="detail-overlay">
+          <span class="detail-label">NATURAL LIGHTING</span>
+        </div>
+      </div>
+
+      <div class="detail-image-card">
+        <img src="{{ '/assets/images/Gallery Background photo/space (12).jpg' | relative_url }}"
+          alt="Viewing Perspectives" loading="lazy">
+        <div class="detail-overlay">
+          <span class="detail-label">VIEWING PERSPECTIVES</span>
+        </div>
+      </div>
+
+      <div class="detail-image-card">
+        <img src="{{ '/assets/images/Gallery Background photo/space (15).jpg' | relative_url }}"
+          alt="Installation Views" loading="lazy">
+        <div class="detail-overlay">
+          <span class="detail-label">INSTALLATION VIEWS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="gallery-features grid"
+      style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+      <!-- Technical Specifications -->
+      <div class="feature-card">
+        <h4 class="feature-title">TECHNICAL SPECIFICATIONS</h4>
+        <ul class="feature-list" style="list-style: none;">
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Museum-grade LED lighting system</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Climate control (20-22°C, 50%
+            humidity)</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Polished concrete floors</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">White-washed gallery walls</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Professional hanging systems</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Blackout capabilities for video/media
+          </li>
+        </ul>
+      </div>
+
+      <!-- Visitor Amenities -->
+      <div class="feature-card">
+        <h4 class="feature-title">VISITOR AMENITIES</h4>
+        <ul class="feature-list" style="list-style: none;">
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Fully wheelchair accessible</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Accessible restroom facilities</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Free high-speed WiFi</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Comfortable seating areas</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Coat check at reception</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Water station available</li>
+        </ul>
+      </div>
+
+      <!-- Exhibition Services -->
+      <div class="feature-card">
+        <h4 class="feature-title">EXHIBITION SERVICES</h4>
+        <ul class="feature-list" style="list-style: none;">
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Professional art handling &
+            installation</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Custom lighting design support</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Exhibition catalogs & print materials
+          </li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Guided tours by appointment</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Photography & documentation</li>
+          <li style="margin-bottom: var(--space-2); color: var(--text-secondary);">Opening event coordination</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-12">
+      <a href="{{ '/gallery/visit' | relative_url }}" class="btn btn-primary">
+        {{ t.gallery.plan_visit | upcase }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .category-heading {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-widest);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: var(--space-2);
+  }
+
+  .mt-12 {
+    margin-top: var(--space-12);
+  }
+
+  .mt-16 {
+    margin-top: var(--space-16);
+  }
+
+  .feature-list li::before {
+    content: "•";
+    color: var(--accent-primary);
+    margin-right: var(--space-2);
+    font-weight: var(--weight-bold);
+  }
+</style>
+```

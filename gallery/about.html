@@ -1,0 +1,144 @@
+---
+layout: gallery-page
+title: "About"
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h1 class="gallery-section-title">{{ t.about.story_title }}</h1>
+      <p class="gallery-section-description text-xl" style="font-size: var(--text-xl);">
+        {{ t.about.story_desc }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container container-narrow">
+    <h2 class="text-center mb-12">{{ t.about.mission }}</h2>
+    <div class="prose">
+      <p>
+        44BYION STUDIO curates exceptional contemporary art that exists in spaces of transition and possibility.
+        We seek works that invite viewers to pause, to question, to see differently—art that functions as
+        a threshold between familiar and unknown.
+      </p>
+      <p>
+        Our program emphasizes artists working at cultural crossroads: those synthesizing Eastern and Western
+        traditions, bridging analog and digital practices, or exploring the tensions between minimalism and
+        materiality.
+      </p>
+      <p>
+        Based in Sydney's vibrant Surry Hills, we are committed to making contemporary art accessible while
+        maintaining the highest curatorial standards.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.about.philosophy }}</h2>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-10);">
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Rigorous Selection</h3>
+        <p class="text-secondary">
+          We exhibit only works that demonstrate technical excellence, conceptual depth, and genuine artistic
+          vision. Each piece in our program has been selected for its ability to reward sustained attention
+          and contemplation.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Cultural Dialogue</h3>
+        <p class="text-secondary">
+          Our exhibitions create conversations across cultures, generations, and artistic traditions. We believe
+          in art's power to bridge differences and reveal unexpected connections between seemingly disparate practices.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Artist Support</h3>
+        <p class="text-secondary">
+          We are committed to supporting emerging and mid-career artists with professional presentation,
+          transparent practices, and genuine partnership. Artists working with 44BYION STUDIO receive
+          dedicated curatorial support and promotion.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Intimate Experience</h3>
+        <p class="text-secondary">
+          Our gallery space is designed for unhurried viewing and quiet reflection. We limit exhibition density
+          to allow each work the space it needs to breathe, creating an environment conducive to genuine
+          aesthetic experience.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Educational Engagement</h3>
+        <p class="text-secondary">
+          Through artist talks, exhibition catalogues, and thoughtful wall texts, we provide context that
+          deepens understanding without prescribing interpretation. We trust our visitors' intelligence
+          and curiosity.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="text-xl mb-4">Accessible Excellence</h3>
+        <p class="text-secondary">
+          Museum-quality art should not be confined to museums. We maintain free admission and accessible
+          hours, believing that exceptional art enriches communities when it can be freely experienced.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-primary">
+  <div class="container container-narrow">
+    <h2 class="text-center mb-12">{{ t.about.our_story }}</h2>
+    <div class="prose">
+      <p>
+        44BYION STUDIO was founded in 2024 by curator and art historian Dr. Alexandra Kim, whose doctoral
+        research explored cross-cultural aesthetic dialogues in contemporary Asian-Australian art. Having
+        worked with institutions including the Museum of Contemporary Art Australia and Art Gallery of NSW,
+        Alex recognized the need for a independent studio space focused specifically on art existing at
+        cultural and conceptual thresholds.
+      </p>
+      <p>
+        The name "Liminal" reflects our core interest: art that exists in transitional spaces, between
+        categories, at productive edges. The Latin root <em>limen</em> means threshold—that space of
+        potential and transformation where change becomes possible.
+      </p>
+      <p>
+        Located in Surry Hills, one of Sydney's most creative neighborhoods, we opened our doors with a
+        commitment to presenting ambitious contemporary art in an intimate, contemplative setting. Our
+        program includes four to six curated exhibitions annually, alongside an ongoing salon-style
+        collection display.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .prose p {
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-loose);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+  }
+
+  .mb-12 {
+    margin-bottom: var(--space-12);
+  }
+
+  .mb-4 {
+    margin-bottom: var(--space-4);
+  }
+</style>

@@ -1,0 +1,163 @@
+---
+layout: cafe-page
+title: Reserve Your Spot
+subtitle: We'll have the coffee ready
+section: cafe
+show_header: true
+---
+
+<section class="reserve-section">
+
+  <div class="reservation-intro">
+    <p>
+      Planning ahead? We'd love to save you a seat. Reservations are recommended for weekend brunch and groups of 4 or more, but walk-ins are always welcome.
+    </p>
+  </div>
+
+  <div class="reservation-form-container">
+    <h2>Make a Reservation</h2>
+
+    <form class="reservation-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Date *</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Time *</label>
+          <select id="time" name="time" required>
+            <option value="">Select a time...</option>
+            <option value="7:00">7:00 AM</option>
+            <option value="7:30">7:30 AM</option>
+            <option value="8:00">8:00 AM</option>
+            <option value="8:30">8:30 AM</option>
+            <option value="9:00">9:00 AM</option>
+            <option value="9:30">9:30 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="10:30">10:30 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="11:30">11:30 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="12:30">12:30 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="13:30">1:30 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="14:30">2:30 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="15:30">3:30 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guests">Number of Guests *</label>
+          <select id="guests" name="guests" required>
+            <option value="">Select...</option>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+            <option value="7">7 people</option>
+            <option value="8">8 people</option>
+            <option value="9+">9+ people (please specify in notes)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="seating">Seating Preference</label>
+          <select id="seating" name="seating">
+            <option value="">No preference</option>
+            <option value="indoor">Indoor</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="booth">Booth</option>
+            <option value="communal">Communal Table</option>
+            <option value="bar">Bar Seating</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Special Requests or Dietary Requirements</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Let us know about allergies, dietary needs, high chairs, special occasions, or any other requests..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="cafe-btn cafe-btn-large">Request Reservation</button>
+      </div>
+
+      <p class="form-note">
+        * Required fields. We'll confirm your reservation via email within 24 hours. For same-day reservations, please call us at +61 (0)2 1234 5678.
+      </p>
+
+    </form>
+  </div>
+
+  <div class="reservation-policies">
+    <h2>Reservation Policies</h2>
+
+    <div class="policy-grid">
+      <div class="policy-item">
+        <h3>Timing</h3>
+        <p>
+          Tables are reserved for 90 minutes during peak times (weekends 9am-1pm). Outside peak times, stay as long as you like.
+        </p>
+      </div>
+
+      <div class="policy-item">
+        <h3>Cancellations</h3>
+        <p>
+          Life happens. If you need to cancel or reschedule, please let us know at least 2 hours in advance.
+        </p>
+      </div>
+
+      <div class="policy-item">
+        <h3>Large Groups</h3>
+        <p>
+          Groups of 8+ require advance booking and may need to select from a set menu. Contact us to discuss options.
+        </p>
+      </div>
+
+      <div class="policy-item">
+        <h3>Walk-Ins</h3>
+        <p>
+          We always hold tables for walk-ins. If you can't reserve, come by anyway—we'll do our best to seat you.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-alternative">
+    <h2>Prefer to Call?</h2>
+    <p>
+      We're happy to take reservations over the phone:<br>
+      <strong><a href="tel:+61212345678">+61 (0)2 1234 5678</a></strong>
+    </p>
+    <p>
+      Monday – Friday: 7am – 4pm<br>
+      Saturday – Sunday: 8am – 5pm
+    </p>
+  </div>
+
+</section>

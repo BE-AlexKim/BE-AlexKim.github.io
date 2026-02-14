@@ -1,0 +1,66 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+
+      <div class="footer-section footer-about">
+        <h3 class="footer-heading">{{ site.title | escape }}</h3>
+        <p class="footer-description">{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-section footer-links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-menu">
+          <li><a href="{{ '/gallery' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/gallery/artists' | relative_url }}">Artists</a></li>
+          <li><a href="{{ '/gallery/exhibitions' | relative_url }}">Exhibitions</a></li>
+          <li><a href="{{ '/gallery/artworks' | relative_url }}">Artworks</a></li>
+          <li><a href="{{ '/cafe' | relative_url }}">Cafe</a></li>
+          <li><a href="{{ '/gallery/contact' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section footer-contact">
+        <h3 class="footer-heading">Get in Touch</h3>
+        <ul class="contact-info">
+          <li>
+            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+          </li>
+          {% if site.social.instagram %}
+          <li>
+            <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener">
+              Instagram
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.facebook %}
+          <li>
+            <a href="https://facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener">
+              Facebook
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-section footer-hours">
+        <h3 class="footer-heading">Opening Hours</h3>
+        <ul class="hours-list">
+          <li>Tuesday - Saturday: 10am - 6pm</li>
+          <li>Sunday: 11am - 5pm</li>
+          <li>Monday: Closed</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.
+      </p>
+      <p class="credits">
+        Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

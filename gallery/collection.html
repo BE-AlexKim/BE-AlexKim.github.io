@@ -1,0 +1,132 @@
+---
+layout: gallery-page
+title: "Collection"
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-section-header">
+      <h1 class="gallery-section-title">{{ t.collection.title }}</h1>
+      <p class="gallery-section-description">
+        {{ t.collection.subtitle }}
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="collection-filters">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      {% assign artists = site.artists | map: 'name' | uniq %}
+      {% for artist in artists %}
+      <button class="filter-btn" data-filter="{{ artist }}">{{ artist }}</button>
+      {% endfor %}
+      <button class="filter-btn" data-filter="available">{{ t.collection.available }}</button>
+      <button class="filter-btn" data-filter="sold">{{ t.collection.sold }}</button>
+    </div>
+
+    <!-- Collection Count -->
+    <div class="collection-count mt-8">
+      <span id="artwork-count">{{ site.artworks | size }}</span> {{ t.collection.artworks }}
+    </div>
+
+    <!-- Artwork Grid -->
+    <div class="artwork-grid mt-8" id="collection-grid">
+      {% assign sorted_artworks = site.artworks | sort: 'title' %}
+      {% for artwork in sorted_artworks %}
+      <div class="artwork-card" data-artist="{{ artwork.artist }}" data-status="{{ artwork.status }}">
+        <a href="{{ artwork.url | relative_url }}">
+          <div class="artwork-card-image">
+            <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }} by {{ artwork.artist }}"
+              loading="lazy">
+          </div>
+          <div class="artwork-card-info">
+            <h3 class="artwork-title">{{ artwork.title }}</h3>
+            <p class="artwork-artist">{{ artwork.artist }}</p>
+            <p class="artwork-meta">{{ artwork.medium }}</p>
+            <p class="artwork-meta">{{ artwork.dimensions }}</p>
+            {% if artwork.status == 'available' %}
+            <p class="artwork-status status-available">{{ artwork.price }}</p>
+            {% elsif artwork.status == 'sold' %}
+            <p class="artwork-status status-sold">{{ t.collection.sold }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Acquisition Inquiries -->
+<section class="section bg-secondary">
+  <div class="container container-narrow text-center">
+    <div class="gallery-section-header">
+      <h2 class="gallery-section-title">{{ t.collection.inquiry_title }}</h2>
+      <p class="gallery-section-description">
+        {{ t.collection.inquiry_subtitle }}
+      </p>
+    </div>
+
+    <div class="contact-info mt-12">
+      <p class="text-xl serif italic mb-8" style="font-family: var(--font-serif-en);">{{ t.common.contact_email }}: <a
+          href="mailto:{{ site.email }}" class="text-accent">{{ site.email }}</a></p>
+      <p class="text-lg mb-12">
+        {{ t.collection.inquiry_details }}
+      </p>
+      <a href="{{ '/gallery/visit' | relative_url }}" class="btn btn-primary">{{ t.gallery.plan_visit | upcase }}</a>
+    </div>
+  </div>
+</section>
+
+</section>
+
+
+<script>
+  // Simple filter functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const artworkCards = document.querySelectorAll('.artwork-card');
+    const countDisplay = document.getElementById('artwork-count');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        artworkCards.forEach(card => {
+          const artist = card.getAttribute('data-artist');
+          const status = card.getAttribute('data-status');
+
+          if (filter === 'all') {
+            card.style.display = 'block';
+            visibleCount++;
+          } else if (filter === 'available' || filter === 'sold') {
+            if (status === filter) {
+              card.style.display = 'block';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          } else {
+            if (artist === filter) {
+              card.style.display = 'block';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+
+        // Update count
+        countDisplay.textContent = visibleCount;
+      });
+    });
+  });
+</script>

@@ -1,0 +1,67 @@
+---
+layout: cafe-page
+title: "Home"
+description: "Ember & Hearth - Artisanal cafe serving craft coffee and seasonal brunch"
+---
+
+<section class="cafe-hero">
+  <div class="cafe-hero-content">
+    <h1>Welcome to Ember & Hearth</h1>
+    <p class="cafe-section-description">Where craft meets comfort, and every visit feels like coming home.</p>
+    <div style="margin-top: 40px;">
+      <a href="{{ '/cafe/menu' | relative_url }}" class="cafe-btn" style="margin-right: 20px;">View Menu</a>
+      <a href="{{ '/cafe/reserve' | relative_url }}" class="cafe-btn cafe-btn-secondary">Reserve a Table</a>
+    </div>
+  </div>
+</section>
+
+<section class="cafe-section">
+  <div class="featured-brew">
+    <p class="featured-brew-title">Today's Brew</p>
+    <h2 class="featured-brew-name">Ethiopian Yirgacheffe</h2>
+    <p class="featured-brew-description">Bright, floral, with hints of bergamot and blueberry. Roasted fresh this week.</p>
+    <div style="margin-top: 30px;">
+      <a href="{{ '/cafe/coffee' | relative_url }}" class="cafe-btn">Learn About Our Coffee</a>
+    </div>
+  </div>
+</section>
+
+<section class="cafe-section" style="background-color: var(--soft-linen); margin-left: -40px; margin-right: -40px; padding-left: 40px; padding-right: 40px;">
+  <div class="cafe-section-header">
+    <h2 class="cafe-section-title">Something for Every Mood</h2>
+  </div>
+
+  <div class="coffee-cards">
+    <div class="coffee-card">
+      <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--ember-terracotta);">Coffee</h3>
+      <p>From single-origin pour-overs to silky flat whites, every cup is crafted with care.</p>
+      <a href="{{ '/cafe/coffee' | relative_url }}" class="cafe-btn" style="margin-top: 20px;">Explore Coffee</a>
+    </div>
+
+    <div class="coffee-card">
+      <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--ember-terracotta);">Brunch</h3>
+      <p>Seasonal flavors, local ingredients, and dishes that make mornings make sense.</p>
+      <a href="{{ '/cafe/menu' | relative_url }}" class="cafe-btn" style="margin-top: 20px;">View Menu</a>
+    </div>
+
+    <div class="coffee-card">
+      <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--ember-terracotta);">Pastries</h3>
+      <p>Baked fresh daily—flaky, buttery, impossible to resist.</p>
+      <a href="{{ '/cafe/menu' | relative_url }}" class="cafe-btn" style="margin-top: 20px;">See What's Baking</a>
+    </div>
+  </div>
+</section>
+
+<section class="cafe-section">
+  <div class="cafe-section-header">
+    <h2 class="cafe-section-title">Come See Us</h2>
+    <p class="cafe-section-description" style="font-size: 18px;">
+      Monday – Friday: 7am – 4pm<br>
+      Saturday – Sunday: 8am – 5pm<br><br>
+      123 Hearth Street, Sydney NSW 2000
+    </p>
+    <div style="margin-top: 30px;">
+      <a href="{{ '/cafe/visit' | relative_url }}" class="cafe-btn">Get Directions</a>
+    </div>
+  </div>
+</section>

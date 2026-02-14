@@ -1,0 +1,479 @@
+---
+layout: gallery-page
+---
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<div class="artist-edge-wrapper">
+  <!-- 1. MODERN HERO: Splitted Typography & Interlocking Visuals -->
+  <section class="edge-hero">
+    <div class="edge-container">
+      <div class="edge-hero-typography">
+        <div class="edge-badge">PROFILE / {{ page.slug | upcase }}</div>
+        <h1 class="edge-main-name">
+          <span class="name-first">{{ page.name | split: " " | first }}</span>
+          <span class="name-last">{{ page.name | split: " " | last }}</span>
+        </h1>
+        <div class="edge-hero-meta">
+          <div class="meta-item">
+            <span class="label">MEDIUM</span>
+            <span class="value">{{ page.medium }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">LOCATION</span>
+            <span class="value">{{ page.location }} [{{ page.nationality }}]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edge-hero-visual">
+        <div class="visual-frame">
+          <img src="{{ page.featured_image | relative_url }}" alt="{{ page.name }}" class="edge-hero-img">
+          <div class="visual-accent-box"></div>
+        </div>
+        <div class="ghost-text" aria-hidden="true">{{ page.name | split: " " | last | upcase }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. NARRATIVE SECTION: Asymmetric Grid with Mechanical Lines -->
+  <section class="edge-narrative section">
+    <div class="container-wide">
+      <div class="edge-grid-layout">
+        <div class="narrative-sidebar">
+          <div class="sidebar-sticky">
+            <h2 class="edge-section-label">BIOGRAPHY</h2>
+            <div class="mechanical-separator"></div>
+            <p class="edge-lead-text">{{ page.bio_short }}</p>
+          </div>
+        </div>
+
+        <div class="narrative-content">
+          <div class="content-prose">
+            {{ content }}
+          </div>
+
+          {% if page.philosophy %}
+          <div class="philosophy-block">
+            <h3 class="edge-sub-label">PHILOSOPHY</h3>
+            <div class="philosophy-quote">
+              {{ page.philosophy | markdownify }}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CATALOGUE: Technical Grid -->
+  {% assign artist_artworks = site.artworks | where: "artist", page.name %}
+  {% if artist_artworks.size > 0 %}
+  <section class="edge-catalogue section" id="works">
+    <div class="container-wide">
+      <div class="catalogue-top-bar">
+        <h2 class="edge-section-label">SELECTED WORKS</h2>
+        <span class="catalogue-count">[{{ artist_artworks.size }}] ITEMS FOUND</span>
+      </div>
+      <div class="mechanical-separator mb-12"></div>
+
+      <div class="edge-work-grid">
+        {% for artwork in artist_artworks %}
+        <article class="edge-work-item">
+          <a href="{{ artwork.url | relative_url }}" class="work-link">
+            <div class="work-visual">
+              <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="work-img">
+              <div class="work-overlay">
+                <span class="view-details">VIEW ARCHIVE</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="info-top">
+                <h3 class="work-title">{{ artwork.title }}</h3>
+                <span class="work-year">{{ artwork.year }}</span>
+              </div>
+              <p class="work-params">{{ artwork.medium }}</p>
+              {% if artwork.status == 'sold' %}
+              <div class="status-indicator sold">SOLD / ARCHIVE</div>
+              {% else %}
+              <div class="status-indicator available">AVAILABLE</div>
+              {% endif %}
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+<style>
+  /* --- MODERN EDGE DESIGN SYSTEM 2026 --- */
+
+  :root {
+    --edge-accent: var(--celadon-dark);
+    --edge-ink: #000;
+    --edge-paper: #fff;
+    --edge-stone: #f0f0f0;
+    --edge-mono: 'Inter', -apple-system, sans-serif;
+    --transition-sharp: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .artist-edge-wrapper {
+    background-color: var(--edge-paper);
+    color: var(--edge-ink);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* 1. HERO SECTION: BOLD & STRUCTURAL */
+  .edge-hero {
+    min-height: 70vh;
+    /* Reduced from 100vh */
+    padding-top: var(--space-20);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .edge-container {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-end;
+  }
+
+  .edge-hero-typography {
+    flex: 0 0 50%;
+    z-index: 10;
+  }
+
+  .edge-badge {
+    font-family: var(--edge-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--edge-accent);
+    margin-bottom: var(--space-6);
+  }
+
+  .edge-main-name {
+    font-family: var(--font-serif-en);
+    font-size: clamp(48px, 10vw, 120px);
+    /* Reduced scale */
+    line-height: 0.85;
+    margin-bottom: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+
+  .name-last {
+    margin-left: 0.5em;
+    /* Staggered effect */
+    color: transparent;
+    -webkit-text-stroke: 1px var(--edge-ink);
+  }
+
+  .edge-hero-meta {
+    display: flex;
+    gap: var(--space-12);
+    border-top: 1px solid var(--edge-ink);
+    padding-top: var(--space-6);
+  }
+
+  .meta-item .label {
+    display: block;
+    font-family: var(--edge-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--stone-grey);
+    margin-bottom: var(--space-2);
+  }
+
+  .meta-item .value {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+
+  .edge-hero-visual {
+    flex: 1;
+    position: relative;
+  }
+
+  .visual-frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 550px;
+    /* Capped scale */
+    background: var(--edge-stone);
+    overflow: visible;
+  }
+
+  .edge-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    mix-blend-mode: multiply;
+    /* Artistic touch */
+    filter: grayscale(100%);
+    transition: var(--transition-sharp);
+  }
+
+  .visual-frame:hover .edge-hero-img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+  }
+
+  .visual-accent-box {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border: 1px solid var(--edge-accent);
+    z-index: -1;
+  }
+
+  .ghost-text {
+    position: absolute;
+    bottom: -10%;
+    right: -20%;
+    font-size: 20vw;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.02);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* 2. NARRATIVE: ASYMMETRIC CONTENT */
+  .edge-grid-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--space-20);
+    align-items: start;
+  }
+
+  .sidebar-sticky {
+    position: sticky;
+    top: 15vh;
+  }
+
+  .edge-section-label {
+    font-family: var(--edge-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.4em;
+    font-weight: 700;
+  }
+
+  .mechanical-separator {
+    width: 100%;
+    height: 1px;
+    background: var(--edge-ink);
+    margin: var(--space-4) 0 var(--space-8);
+  }
+
+  .edge-lead-text {
+    font-size: var(--text-xl);
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--edge-accent);
+  }
+
+  .content-prose {
+    column-count: 2;
+    column-gap: var(--space-12);
+    font-size: var(--text-base);
+    line-height: 1.8;
+  }
+
+  .philosophy-block {
+    margin-top: var(--space-16);
+    background: var(--edge-stone);
+    padding: var(--space-12);
+    border-left: 4px solid var(--edge-ink);
+  }
+
+  .edge-sub-label {
+    font-family: var(--edge-mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-8);
+  }
+
+  .philosophy-quote {
+    font-family: var(--font-serif-en);
+    font-size: var(--text-2xl);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* 3. CATALOGUE: MODERN TECHNICAL GRID */
+  .catalogue-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .catalogue-count {
+    font-family: var(--edge-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .edge-work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--edge-stone);
+    /* Becomes grid lines */
+    border: 1px solid var(--edge-stone);
+  }
+
+  .edge-work-item {
+    background: var(--edge-paper);
+    padding: var(--space-8);
+    transition: var(--transition-sharp);
+  }
+
+  .edge-work-item:hover {
+    background: var(--edge-stone);
+  }
+
+  .work-visual {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: var(--space-6);
+  }
+
+  .work-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-sharp);
+  }
+
+  .work-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-sharp);
+  }
+
+  .view-details {
+    color: #fff;
+    font-family: var(--edge-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 4px;
+  }
+
+  .edge-work-item:hover .work-overlay {
+    opacity: 1;
+  }
+
+  .edge-work-item:hover .work-img {
+    transform: scale(1.1);
+  }
+
+  .info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-2);
+  }
+
+  .work-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .work-year {
+    font-family: var(--edge-mono);
+    font-size: 11px;
+    color: var(--stone-grey);
+  }
+
+  .work-params {
+    font-size: var(--text-sm);
+    color: var(--charcoal);
+    margin-bottom: var(--space-4);
+  }
+
+  .status-indicator {
+    font-family: var(--edge-mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 2px 6px;
+    display: inline-block;
+    border: 1px solid currentColor;
+  }
+
+  .status-indicator.sold {
+    color: var(--stone-grey);
+  }
+
+  .status-indicator.available {
+    color: var(--edge-accent);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .edge-grid-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+
+    .edge-work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-prose {
+      column-count: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .edge-container {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    .edge-hero-typography {
+      width: 100%;
+    }
+
+    .edge-hero-visual {
+      width: 100%;
+      margin-bottom: var(--space-12);
+    }
+
+    .edge-work-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .edge-main-name {
+      font-size: 48px;
+    }
+
+    .edge-hero-meta {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>

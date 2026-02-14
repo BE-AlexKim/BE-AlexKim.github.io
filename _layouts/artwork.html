@@ -1,0 +1,107 @@
+{% assign lang = page.lang | default: site.default_lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<article class="section">
+  <div class="container">
+    <div class="grid"
+      style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--space-12); align-items: start;">
+
+      <!-- Artwork Image -->
+      <div class="artwork-detail-image">
+        <div class="artwork-image-wrapper p-4 bg-secondary"
+          style="padding: var(--space-4); background-color: var(--soft-beige);">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid"
+            style="width: 100%; height: auto; display: block;">
+        </div>
+      </div>
+
+      <!-- Artwork Info -->
+      <div class="artwork-detail-info">
+        <div class="gallery-section-header">
+          <h1 class="artwork-title mb-2" style="font-size: clamp(32px, 4vw, 48px);">{{ page.title }}</h1>
+
+          {% if page.artist %}
+          {% assign artist = site.artists | where: "name", page.artist | first %}
+          <p class="artwork-artist text-xl serif italic"
+            style="font-size: var(--text-xl); font-family: var(--font-serif-en); font-style: italic;">
+            {% if artist %}
+            <a href="{{ artist.url | relative_url }}" class="text-accent">{{ page.artist }}</a>
+            {% else %}
+            {{ page.artist }}
+            {% endif %}
+          </p>
+          {% endif %}
+        </div>
+
+        <div class="artwork-metadata mt-12 py-8 border-y"
+          style="margin-top: var(--space-12); padding: var(--space-8) 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+          <div class="grid grid-cols-2 gap-y-4"
+            style="display: grid; grid-template-columns: 100px 1fr; gap: var(--space-4);">
+            <span class="text-sm text-tertiary uppercase tracking-widest">{{ t.artwork.year }}</span>
+            <span class="text-lg">{{ page.year }}</span>
+
+            <span class="text-sm text-tertiary uppercase tracking-widest">{{ t.artwork.medium }}</span>
+            <span class="text-lg">{{ page.medium }}</span>
+
+            <span class="text-sm text-tertiary uppercase tracking-widest">{{ t.artwork.dimensions }}</span>
+            <span class="text-lg">{{ page.dimensions }}</span>
+
+            <span class="text-sm text-tertiary uppercase tracking-widest">{{ t.artwork.status }}</span>
+            <span>
+              {% if page.status == 'available' %}
+              <span class="text-accent-secondary">{{ page.price | default: 'Contact for price' }}</span>
+              {% else %}
+              <span class="text-tertiary italic">{{ t.collection.sold }}</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+
+        <div class="artwork-description mt-12 prose">
+          {{ content }}
+        </div>
+
+        <div class="artwork-actions mt-16">
+          <a href="mailto:{{ site.email }}?subject=Inquiry about {{ page.title | uri_escape }} by {{ page.artist | uri_escape }}"
+            class="btn btn-primary w-full">
+            {{ t.collection.inquiry_title | upcase }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  .border-y {
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .py-8 {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  .mt-12 {
+    margin-top: var(--space-12);
+  }
+
+  .mt-16 {
+    margin-top: var(--space-16);
+  }
+
+  .mb-2 {
+    margin-bottom: var(--space-2);
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .text-accent-secondary {
+    color: var(--accent-secondary);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-xl);
+  }
+</style>

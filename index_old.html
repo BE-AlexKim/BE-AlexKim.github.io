@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Gallery & Ember & Hearth | Contemporary Art & Artisanal Coffee</title>
+    <meta name="description" content="Choose your experience: Explore contemporary art at Liminal Gallery or enjoy artisanal coffee at Ember & Hearth cafe in Sydney.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Inter:wght@300;400;500&family=Petrona:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/gateway.css' | relative_url }}">
+</head>
+<body class="gateway-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="gateway-container" id="main-content">
+        <!-- Gallery Side -->
+        <div class="gateway-half gallery-side">
+            <a href="{{ '/gallery/' | relative_url }}" class="gateway-link" aria-label="Enter Liminal Gallery">
+                <div class="gateway-background" style="background-image: url('{{ '/assets/images/Gallery Background photo/space (1).jpg' | relative_url }}');"></div>
+                <div class="gateway-overlay"></div>
+                <div class="gateway-content">
+                    <h1 class="gateway-brand-name">LIMINAL GALLERY</h1>
+                    <p class="gateway-tagline">Where art becomes threshold</p>
+                    <span class="gateway-cta">Enter Gallery</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Cafe Side -->
+        <div class="gateway-half cafe-side">
+            <a href="{{ '/cafe/' | relative_url }}" class="gateway-link" aria-label="Enter Ember & Hearth Cafe">
+                <div class="gateway-background cafe-bg"></div>
+                <div class="gateway-overlay"></div>
+                <div class="gateway-content">
+                    <h1 class="gateway-brand-name">EMBER & HEARTH</h1>
+                    <p class="gateway-tagline">Come for the coffee, stay for the warmth</p>
+                    <span class="gateway-cta">Enter Cafe</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="gateway-footer">
+        <p class="footer-text">Two experiences. One vision.</p>
+        <p class="footer-contact">123 Example Street, Sydney | hello@liminal-ember.com</p>
+    </footer>
+
+    <script>
+        // Smooth hover effects
+        document.querySelectorAll('.gateway-half').forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                this.style.flex = '1.05';
+                this.querySelector('.gateway-overlay').style.opacity = '0';
+            });
+
+            element.addEventListener('mouseleave', function() {
+                this.style.flex = '1';
+                this.querySelector('.gateway-overlay').style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>

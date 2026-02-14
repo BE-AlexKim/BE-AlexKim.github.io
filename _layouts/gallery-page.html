@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}44BYION STUDIO</title>
+    <meta name="description"
+        content="{% if page.description %}{{ page.description }}{% else %}44BYION STUDIO - Contemporary art space and artisanal craft.{% endif %}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/eastern-minimal.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/gallery-eastern.css' | relative_url }}">
+
+    {% seo %}
+</head>
+
+<body class="gallery-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container-wide">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="{{ '/' | relative_url }}" class="site-logo">
+                        <span class="logo-line-1">44BYION</span>
+                        <span class="logo-line-2">STUDIO</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="nav-menu">
+                        <li><a href="{{ '/gallery/' | relative_url }}"
+                                class="nav-link {% if page.url == '/gallery/' or page.url == '/gallery/index.html' %}active{% endif %}">Home</a>
+                        </li>
+                        <li><a href="{{ '/gallery/exhibitions' | relative_url }}"
+                                class="nav-link {% if page.url contains '/exhibitions' %}active{% endif %}">Exhibitions</a>
+                        </li>
+                        <li><a href="{{ '/gallery/artists' | relative_url }}"
+                                class="nav-link {% if page.url contains '/artists' %}active{% endif %}">Artists</a></li>
+                        <li><a href="{{ '/gallery/collection' | relative_url }}"
+                                class="nav-link {% if page.url contains '/collection' %}active{% endif %}">Collection</a>
+                        </li>
+                        <li><a href="{{ '/gallery/about' | relative_url }}"
+                                class="nav-link {% if page.url contains '/about' %}active{% endif %}">About</a></li>
+                        <li><a href="{{ '/gallery/visit' | relative_url }}"
+                                class="nav-link {% if page.url contains '/visit' %}active{% endif %}">Visit</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-right">
+                    <!-- Language switcher removed as per user request -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-heading">44BYION STUDIO</h3>
+                    <p class="footer-description">
+                        An art space dedicated to showcasing exceptional works
+                        at the intersection of tradition and innovation.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-heading">Visit</h3>
+                    <p>123 Example Street<br>Surry Hills, Sydney NSW 2010</p>
+                    <p>Tuesday – Sunday<br>10am – 6pm</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-heading">Contact</h3>
+                    <p>
+                        <a href="mailto:hello@44byion.com">hello@44byion.com</a><br>
+                        <a href="tel:+61299998888">+61 2 9999 8888</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 44BYION STUDIO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll effect for header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

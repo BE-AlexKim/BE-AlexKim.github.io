@@ -1,0 +1,283 @@
+---
+layout: none
+lang: en
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44BYION STUDIO | Contemporary Art & Artisanal Coffee</title>
+    <meta name="description"
+        content="44BYION STUDIO - A sanctuary for contemporary art and artisanal coffee in Sydney.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/eastern-minimal.css' | relative_url }}">
+
+    <style>
+        /* Gateway Page Specific Styles */
+        .gateway-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--rice-paper);
+        }
+
+        .gateway-header {
+            padding: var(--space-4) var(--container-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gateway-logo {
+            font-family: var(--font-serif-en);
+            font-size: var(--text-xl);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-wider);
+            color: var(--ink-black);
+        }
+
+        .gateway-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-12) var(--container-padding);
+        }
+
+        .gateway-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gateway-title {
+            font-family: var(--font-serif-en);
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-tight);
+            color: var(--ink-black);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-tight);
+        }
+
+        .gateway-tagline {
+            font-family: var(--font-sans-en);
+            font-size: var(--text-xl);
+            font-weight: var(--weight-light);
+            color: var(--text-secondary);
+            letter-spacing: var(--tracking-wide);
+            margin-bottom: var(--space-12);
+            line-height: var(--leading-relaxed);
+        }
+
+        .gateway-divider {
+            width: 120px;
+            height: 1px;
+            background-color: var(--celadon);
+            margin: var(--space-8) auto;
+        }
+
+        .gateway-choices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gateway-choice {
+            position: relative;
+            padding: var(--space-10) var(--space-6);
+            background-color: var(--warm-white);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--duration-base) var(--ease-elegant);
+            text-decoration: none;
+            display: block;
+        }
+
+        .gateway-choice:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--celadon);
+        }
+
+        .gateway-choice-label {
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
+            letter-spacing: var(--tracking-widest);
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-3);
+        }
+
+        .gateway-choice-title {
+            font-family: var(--font-serif-en);
+            font-size: var(--text-4xl);
+            font-weight: var(--weight-semibold);
+            color: var(--ink-black);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+        }
+
+        .gateway-choice-description {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-6);
+        }
+
+        .gateway-choice-cta {
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            color: var(--accent-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .gateway-choice-cta::after {
+            content: '→';
+            transition: transform var(--duration-base) var(--ease-elegant);
+        }
+
+        .gateway-choice:hover .gateway-choice-cta::after {
+            transform: translateX(4px);
+        }
+
+        .gateway-footer {
+            padding: var(--space-6) var(--container-padding);
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .gateway-footer-text {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-2);
+        }
+
+        .gateway-footer-contact {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+        }
+
+        /* Korean Typography */
+        html[lang="ko"] .gateway-title,
+        html[lang="ko"] .gateway-choice-title {
+            font-family: var(--font-serif-kr);
+            letter-spacing: var(--tracking-normal);
+        }
+
+        html[lang="ko"] .gateway-tagline,
+        html[lang="ko"] .gateway-choice-description {
+            font-family: var(--font-sans-kr);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gateway-choices {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .gateway-choice {
+                padding: var(--space-8) var(--space-5);
+            }
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gateway-content>* {
+            animation: fadeInUp 0.8s var(--ease-elegant) backwards;
+        }
+
+        .gateway-title {
+            animation-delay: 0.1s;
+        }
+
+        .gateway-tagline {
+            animation-delay: 0.2s;
+        }
+
+        .gateway-divider {
+            animation-delay: 0.3s;
+        }
+
+        .gateway-choices {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body class="gateway-page">
+    <header class="gateway-header">
+        <div class="gateway-logo">
+            <span style="display: block; font-weight: 600; letter-spacing: 0.2em;">44BYION</span>
+            <span
+                style="display: block; font-size: 0.6em; letter-spacing: 0.4em; color: var(--text-tertiary);">STUDIO</span>
+        </div>
+        <!-- Language switcher removed as per user request -->
+    </header>
+
+    <main class="gateway-container">
+        <div class="gateway-content">
+            <h1 class="gateway-title">44BYION STUDIO</h1>
+            <p class="gateway-tagline">Curating Space, Crafting Experience</p>
+
+            <div class="gateway-divider"></div>
+
+            <div class="gateway-choices">
+                <!-- Gallery Choice -->
+                <a href="{{ '/gallery/' | relative_url }}" class="gateway-choice">
+                    <div class="gateway-choice-label">Art Space</div>
+                    <h2 class="gateway-choice-title">Gallery</h2>
+                    <p class="gateway-choice-description">
+                        Discover curated contemporary art at the intersection of tradition and innovation.
+                        A space for contemplation and artistic discovery.
+                    </p>
+                    <span class="gateway-choice-cta">Enter Gallery</span>
+                </a>
+
+                <!-- Cafe Choice -->
+                <a href="{{ '/cafe/' | relative_url }}" class="gateway-choice">
+                    <div class="gateway-choice-label">Artisanal Craft</div>
+                    <h2 class="gateway-choice-title">Café</h2>
+                    <p class="gateway-choice-description">
+                        Exquisitely crafted coffee and seasonal brunch in a space designed for connection.
+                        Where the art of coffee meets the comfort of home.
+                    </p>
+                    <span class="gateway-choice-cta">Enter Café</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="gateway-footer">
+        <p class="gateway-footer-text">Two experiences. One vision.</p>
+        <p class="gateway-footer-contact">123 Example Street, Sydney | hello@liminal-ember.com</p>
+    </footer>
+</body>
+
+</html>
